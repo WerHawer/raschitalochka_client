@@ -7,6 +7,16 @@
   --secondary-font-colo: #ffffff;
   --third-font-color: #6b7d83;
   --accent-font-color: #282828;
+  --alarm-font-color: #ff6c00;
+  --good-font-color: #75c16e;
+  --padding-input-color: #b9c9d4;
+
+  --gradient-color: linear-gradient(
+    90deg,
+    rgba(255, 197, 1, 1) 0%,
+    rgba(255, 108, 0, 1) 54%,
+    rgba(255, 108, 0, 1) 100%
+  );
 
   --primary-green: #516d57;
   --active-green: #669668;
