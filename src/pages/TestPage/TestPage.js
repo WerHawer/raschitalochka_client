@@ -1,5 +1,6 @@
 import React from "react";
 import Input from "components/Input/Input";
+import Button from "../../components/Button/button";
 
 const testWords = ["kokokok", "kolpop", "optop", "okli", "por"];
 
@@ -16,6 +17,7 @@ const TestPage = ({ test, testAction }) => {
       <button onClick={handleClick}>Test redux</button>
 
       <Input />
+      <Button>Button</Button>
     </>
   );
 };

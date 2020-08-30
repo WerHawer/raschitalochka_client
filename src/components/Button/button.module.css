@@ -1,0 +1,29 @@
+.button {
+  text-decoration: none;
+  user-select: none;
+  border: 0;
+  border-radius: 3px;
+  padding: 8px 40px;
+  outline: none; /* убирать контур в Mozilla */
+  background-color: var(--good-font-color);
+  color: #fff;
+  opacity: 1;
+}
+
+.wrapper {
+  margin: 10px;
+}
+
+.button:hover,
+.button:focus {
+  background-image: var(--gradient-color);
+}
+
+.button_disabled {
+  text-decoration: none;
+  border: 0;
+  border-radius: 3px;
+  padding: 8px 40px;
+  color: #fff;
+  background-color: #cccaca;
+}
