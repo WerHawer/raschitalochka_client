@@ -8,7 +8,11 @@
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
     "axios": "^0.20.0",
+<<<<<<< HEAD
+    "formik": "^2.1.5",
+=======
     "prop-types": "^15.7.2",
+>>>>>>> df2ee3a3aaf1f5526afbd5c8407b6fb4223c0aee
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-loader-spinner": "^3.1.14",
@@ -18,7 +22,8 @@
     "react-scripts": "3.4.3",
     "redux": "^4.0.5",
     "redux-logger": "^3.0.6",
-    "redux-persist": "^6.0.0"
+    "redux-persist": "^6.0.0",
+    "yup": "^0.29.3"
   },
   "scripts": {
     "start": "react-scripts start",
