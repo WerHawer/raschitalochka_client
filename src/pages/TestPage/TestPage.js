@@ -1,4 +1,5 @@
 import React from "react";
+import Input from "components/Input/Input";
 
 const testWords = ["kokokok", "kolpop", "optop", "okli", "por"];
 
@@ -13,6 +14,8 @@ const TestPage = ({ test, testAction }) => {
       <h1>Routing_1</h1>
       <p>Redux with persist: {test}</p>
       <button onClick={handleClick}>Test redux</button>
+
+      <Input />
     </>
   );
 };
