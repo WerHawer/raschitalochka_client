@@ -1,0 +1,48 @@
+.form {
+  widows: 100%;
+  font-family: "HelveticaNeueCyr";
+}
+.title {
+  font-size: 15px;
+  line-height: 30px;
+  font-weight: bold;
+}
+.list {
+  list-style: none;
+}
+.label {
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 18px;
+}
+.input {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+  position: relative;
+}
+.input + .label {
+  display: inline-flex;
+  align-items: center;
+  user-select: none;
+}
+.input + .label::before {
+  position: absolute;
+  left: 0;
+  width: 12px;
+  height: 12px;
+  margin-right: 16px;
+  border: 2px solid #b9c9d4;
+  background-color: #ffffff;
+  border-radius: 50%;
+  content: "";
+}
+.input:checked + .label::after {
+  position: absolute;
+  left: 5px;
+  width: 6px;
+  height: 6px;
+  background-color: #ff6c00;
+  border-radius: 50%;
+  content: "";
+}
