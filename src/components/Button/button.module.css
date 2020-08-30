@@ -27,3 +27,13 @@
   color: #fff;
   background-color: #cccaca;
 }
+
+.button_logout {
+  padding: 1px 14px;
+  border: none;
+  text-decoration: none;
+  outline: none;
+  user-select: none;
+  background-repeat: no-repeat;
+  background-image: url(../../public/icons/exit.svg);
+}

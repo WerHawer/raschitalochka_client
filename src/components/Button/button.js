@@ -4,6 +4,7 @@ import css from "./button.module.css";
 import Spinner from "./button-loader/button-spinner";
 
 const Button = ({
+  variant = "standart",
   children,
   type,
   name,
@@ -14,24 +15,35 @@ const Button = ({
   isLoading = true,
 }) => (
   <>
-    <div className={css.wrapper}>
-      <button
-        className={disabled ? css.button_disabled : css.button}
-        type={type}
-        name={name}
-        value={value}
-        onClick={onClick}
-        disabled={disabled}
-      >
-        {!isLoading ? <Spinner /> : children}
-        {/* убрать знако восклицания что бы работал лоадер */}
-      </button>
-    </div>
-    <div>
-      <button type={type} name={name} value={value} onClick={onClick}>
-        log out
-      </button>
-    </div>
+    {variant === "standart" && (
+      <div className={css.wrapper}>
+        <button
+          className={disabled ? css.button_disabled : css.button}
+          type={type}
+          name={name}
+          value={value}
+          onClick={onClick}
+          disabled={disabled}
+        >
+          {!isLoading ? <Spinner /> : children}
+          {/* убрать знако восклицания что бы работал лоадер */}
+        </button>
+      </div>
+    )}
+
+    {variant === "logout" && (
+      <div>
+        <button
+          className={css.button_logout}
+          type={type}
+          name={name}
+          value={value}
+          onClick={onClick}
+        >
+          logout
+        </button>
+      </div>
+    )}
   </>
 );
 
