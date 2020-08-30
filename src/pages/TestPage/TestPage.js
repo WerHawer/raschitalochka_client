@@ -5,6 +5,7 @@ import Button from "components/Button/button";
 import Radio from "components/Radio/Radio";
 
 
+
 const testWords = ["kokokok", "kolpop", "optop", "okli", "por"];
 
 const TestPage = ({ test, testAction }) => {
@@ -23,6 +24,8 @@ const TestPage = ({ test, testAction }) => {
       <Input />
 
       <Button>Button</Button>
+
+      <Button variant='logout'/>
 
       <Radio
         elements={[
