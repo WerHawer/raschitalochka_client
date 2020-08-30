@@ -4,14 +4,15 @@
   --main-bg-color: #eef0f4;
   --secondary-bg-color: #f3f6f6;
   --white-bg-color: #ffffff;
+  --input-bg-color: #f9fbfb;
 
   --primary-font-color: #2c353e;
   --secondary-font-colo: #ffffff;
   --third-font-color: #6b7d83;
   --accent-font-color: #282828;
-  --alarm-font-color: #ff6c00;
+  --alarm-color: #ff6c00;
   --good-font-color: #75c16e;
-  --padding-input-color: #b9c9d4;
+  --placeholder-input-color: #b9c9d4;
 
   --gradient-color: linear-gradient(
     90deg,

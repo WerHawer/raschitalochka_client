@@ -1,0 +1,41 @@
+.inputWrapper {
+  position: relative;
+}
+
+.input {
+  height: 49px;
+  width: 100%;
+  border-radius: 8px;
+  border: none;
+  background: var(--input-bg-color);
+  padding-left: 58px;
+  background-position: 21px center;
+  background-repeat: no-repeat;
+}
+
+.input::placeholder {
+  font-size: 13px;
+  color: var(--placeholder-input-color);
+}
+
+.input__password {
+  background-image: url(../../public/icons/lock.svg);
+}
+
+.input__email {
+  background-image: url(../../public/icons/email.svg);
+}
+
+.input__name {
+  background-image: url(../../public/icons/account.svg);
+}
+
+.error {
+  -webkit-text-fill-color: var(--alarm-color);
+}
+
+.errorText {
+  position: absolute;
+  bottom: -19px;
+  left: 58px;
+}
