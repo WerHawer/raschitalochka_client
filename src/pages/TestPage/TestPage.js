@@ -1,5 +1,6 @@
 import React from "react";
 import Input from "components/Input/Input";
+import Radio from "components/Radio/Radio";
 
 const testWords = ["kokokok", "kolpop", "optop", "okli", "por"];
 
@@ -16,6 +17,13 @@ const TestPage = ({ test, testAction }) => {
       <button onClick={handleClick}>Test redux</button>
 
       <Input />
+      <Radio
+        elements={[
+          { id: 1, value: "yes" },
+          { id: 2, value: "no" },
+        ]}
+        name="Categories"
+      />
     </>
   );
 };
