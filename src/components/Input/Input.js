@@ -14,10 +14,11 @@ const Input = ({
   serverError,
 }) => {
   const inputNameBgr = `input__${name}`;
-  const errorStyle = error || serverError ? css.error : undefined;
+  const errorStyle =
+    (error && touched) || (serverError && touched) ? css.error : undefined;
 
   return (
-    <div className={css.inputWrapper}>
+    <div className="inputWrapper">
       <input
         className={`${customClass} ${css.input} ${css[inputNameBgr]} ${errorStyle}`}
         name={name}

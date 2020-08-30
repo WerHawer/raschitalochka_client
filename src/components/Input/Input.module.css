@@ -1,4 +1,4 @@
-.inputWrapper {
+:global(.inputWrapper) {
   position: relative;
 }
 
@@ -18,7 +18,8 @@
   color: var(--placeholder-input-color);
 }
 
-.input__password {
+.input__password,
+.input__password_confirm {
   background-image: url(../../public/icons/lock.svg);
 }
 

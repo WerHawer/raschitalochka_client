@@ -1,5 +1,5 @@
 import React from "react";
-import Input from "components/Input/Input";
+import RegForm from "components/RegForm/RegForm";
 
 const testWords = ["kokokok", "kolpop", "optop", "okli", "por"];
 
@@ -15,7 +15,7 @@ const TestPage = ({ test, testAction }) => {
       <p>Redux with persist: {test}</p>
       <button onClick={handleClick}>Test redux</button>
 
-      <Input />
+      <RegForm />
     </>
   );
 };
