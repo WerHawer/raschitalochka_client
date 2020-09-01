@@ -1,0 +1,15 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.profileNameBlock {
+  display: flex;
+}
+.profileName {
+  padding-right: 20px;
+  border-right: 1px solid var(--third-font-color);
+}
+.button {
+  padding-left: 20px;
+}
