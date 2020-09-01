@@ -4,7 +4,7 @@ import './index.css';
 import './reset.css';
 import App from './App';
 import { Provider } from 'react-redux';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 import { PersistGate } from 'redux-persist/integration/react';
 import { store, persistor } from './redux/store';
 
@@ -13,7 +13,7 @@ ReactDOM.render(
     <PersistGate loading={null} persistor={persistor}>
       <BrowserRouter>
         <React.StrictMode>
-          <Route component={App} />
+          <App />
         </React.StrictMode>
       </BrowserRouter>
     </PersistGate>

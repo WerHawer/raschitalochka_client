@@ -5,7 +5,7 @@ import Diagram from './LinkDiagram/Diagram';
 import Home from './LinkHome/Home';
 
 export default function Links() {
-  let match = useRouteMatch();
+  const match = useRouteMatch();
   return (
     <div>
       <ul>

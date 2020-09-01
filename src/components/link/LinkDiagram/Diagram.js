@@ -1,10 +1,5 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-export default class Diagram extends Component {
-  state = {};
-  render() {
-    return <> aaaaaaaaaaaaaaaaaaa diagram</>;
-  }
-}
+const Diagram = () => <> aaaaaaaaaaaaaaaaaaa diagram</>;
 
-
+export default Diagram;
