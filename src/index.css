@@ -1,14 +1,17 @@
-@import "./fonts//font.css";
+@import './fonts//font.css';
 
 :root {
   --main-bg-color: #eef0f4;
   --secondary-bg-color: #f3f6f6;
+  --grey-bg-color: #ededed;
+  --main-mobile-bg-color: #3f5544;
   --white-bg-color: #ffffff;
   --input-bg-color: #f9fbfb;
 
   --primary-font-color: #2c353e;
   --secondary-font-colo: #ffffff;
   --third-font-color: #6b7d83;
+  --main-green-font: #618d63;
   --accent-font-color: #282828;
   --alarm-color: #ff6c00;
   --good-font-color: #75c16e;
@@ -26,5 +29,5 @@
 }
 
 body {
-  font-family: "HelveticaNeueCyr";
+  font-family: 'HelveticaNeueCyr';
 }
