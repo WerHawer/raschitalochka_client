@@ -40,40 +40,107 @@
   background-position: 30px 17px;
 }
 
-@media (min-width: 320px) {
+@media (min-width: 319px) {
   .wrapper {
     display: flex;
-    background-color: rgb(179, 173, 173);
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    border-radius: 1px;
     margin: 0 auto;
     width: 320px;
-    height: 180px;
-    padding: 0;
+    height: 40px;
+    padding: 0px;
   }
   .children {
     display: none;
   }
 
-  .nav_Link{
+  .nav_Link {
+    margin: 12px;
+    padding: 0;
     width: 30px;
-    height: 30px;
+    height: 25px;
   }
 
   .link {
-    background-color: blue;
+    background-color: #3f5544;
+    border-radius: 6px;
+    width: 30px;
+    height: 25px;
+    padding: 0;
+  }
+
+  .active_link {
+    background-color: var(--active-link-media-bg-color);
   }
 
   .image_home {
     background-image: url(../../public/icons/home.svg);
-    /* background-position: 30px 12px; */
+    background-position: center;
   }
 
   .image_diagrams {
     background-image: url(../../public/icons/Diagrams.svg);
-    /* background-position: 30px 17px; */
+    background-position: center;
   }
 
   .image_currency {
     background-image: url(../../public/icons/currency.svg);
-    /* background-position: 30px 17px; */
+    background-position: center;
+  }
+}
+
+@media (min-width: 768px) {
+  .wrapper {
+    display: flex;
+    flex-wrap: nowrap;
+    /* align-items: center; */
+    /* justify-content: center; */
+    /* flex-direction: row; */
+    width: 768px;
+    height: 80px;
+    margin: 0 auto;
+    padding: 0;
+    /* background-color: var(--white-bg-color); */
+  }
+
+  .link {
+    /* background-color: var(--white-bg-color); */
+    border-radius: 6px;
+    width: 100px;
+    height: 20px;
+    padding: 0;
+  }
+
+  .children {
+    color: #669668;
+    display: block;
+  }
+
+  .nav_Link {
+    margin: 60px;
+    /* padding: 0;
+    width: 30px;
+    height: 25px; */
+  }
+
+  .image_home {
+    background-image: url(../../public/icons/home.svg);
+    background-position: 6px center;
+  }
+
+  .image_diagrams {
+    background-image: url(../../public/icons/Diagrams.svg);
+    background-position: 6px center;
+  }
+
+  .image_currency {
+    display: none;
+  }
+
+  .children {
+    color: #3f5544;
+    padding-left: 31px;
   }
 }

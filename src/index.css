@@ -16,6 +16,7 @@
 /* link color */
   --active-link-bg-color:#6fa76f;
   --wrapper-link-bg-color:#516d57;
+  --active-link-media-bg-color:#669668;
 
   --gradient-color: linear-gradient(
     90deg,
