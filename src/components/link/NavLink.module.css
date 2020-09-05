@@ -2,24 +2,22 @@
   display: flex;
   flex-direction: column;
   margin: 30px;
-  /* magin убрать при интеграwии  */
+  /* margin убрать при интеграции  */
   width: 300px;
   height: 80px;
   padding: 35px 0 35px 0;
-  background-color: #516d57;
+  background-color: var(--wrapper-link-bg-color);
   border-radius: 5px;
 }
 
 .active_link {
-  background-color: #6fa76f;
+  background-color: var(--active-link-bg-color);
 }
 
 .link {
   font-size: 15px;
-  /* width: 240px; */
   height: 40px;
-  color: #fff;
-  /* display: block; */
+  color: var(--white-bg-color);
   text-decoration: none;
   display: flex;
   align-items: center;
@@ -32,7 +30,7 @@
   background-position: 30px 12px;
 }
 
-.image_Diagrams {
+.image_diagrams {
   background-image: url(../../public/icons/Diagrams.svg);
   background-position: 30px 17px;
 }

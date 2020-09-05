@@ -13,6 +13,9 @@
   --alarm-color: #ff6c00;
   --good-font-color: #75c16e;
   --placeholder-input-color: #b9c9d4;
+/* link color */
+  --active-link-bg-color:#6fa76f;
+  --wrapper-link-bg-color:#516d57;
 
   --gradient-color: linear-gradient(
     90deg,

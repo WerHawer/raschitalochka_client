@@ -6,7 +6,7 @@
   padding: 8px 40px;
   outline: none; /* убирать контур в Mozilla */
   background-color: var(--good-font-color);
-  color: #fff;
+  color: var(--white-bg-color);
   opacity: 1;
 }
 
@@ -29,8 +29,8 @@
 }
 
 .button_logout {
-  background-color: #fff;
-  color: #6B7D83;
+  background-color: var(--white-bg-color);
+  color: #6b7d83;
   margin: 10px;
   padding: 1px 5px 1px 20px;
   border: none;
@@ -38,10 +38,10 @@
   outline: none;
   user-select: none;
   background-repeat: no-repeat;
-  background-image: url(../../public/icons/exit.svg) ;
+  background-image: url(../../public/icons/exit.svg);
 }
 
 .button_logout:hover,
 .button_logout:focus {
-  color: #56b2d1
+  color: #56b2d1;
 }
