@@ -4,8 +4,9 @@ import css from '../../components/link/NavLink.module.css';
 
 const TestRouting = () => (
   <div className={css.wrapper}>
-    <NavLinkCustom to={'/home'} childen={'home'} name={'home'} />
-    <NavLinkCustom to={'/diagrams'} childen={'diagrams'} name={'diagrams'} />
+    <NavLinkCustom to={'/home'} children={'Home'} name={'home'} />
+    <NavLinkCustom to={'/diagrams'} children={'Diagrams'} name={'diagrams'} />
+    <NavLinkCustom to={'/currency'} children={'currency'} name={'currency'} />
   </div>
 );
 

@@ -2,7 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import css from './NavLink.module.css';
 
-const NavLinkCustom = ({ to, name, childen }) => {
+const NavLinkCustom = ({ to, name, children }) => {
   let mainClass;
 
   if (name === 'home') {
@@ -13,10 +13,14 @@ const NavLinkCustom = ({ to, name, childen }) => {
     mainClass = css.image_diagrams;
   }
 
+  if (name === 'currency') {
+    mainClass = css.image_currency;
+  }
+
   return (
     <div className={css.nav_Link}>
       <NavLink to={to} name={name} className={`${css.link} ${mainClass}`} activeClassName={css.active_link}>
-        {childen}
+        <div className={css.children}>{children}</div>
       </NavLink>
     </div>
   );

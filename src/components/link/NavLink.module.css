@@ -34,3 +34,46 @@
   background-image: url(../../public/icons/Diagrams.svg);
   background-position: 30px 17px;
 }
+
+.image_currency {
+  background-image: url(../../public/icons/currency.svg);
+  background-position: 30px 17px;
+}
+
+@media (min-width: 320px) {
+  .wrapper {
+    display: flex;
+    background-color: rgb(179, 173, 173);
+    margin: 0 auto;
+    width: 320px;
+    height: 180px;
+    padding: 0;
+  }
+  .children {
+    display: none;
+  }
+
+  .nav_Link{
+    width: 30px;
+    height: 30px;
+  }
+
+  .link {
+    background-color: blue;
+  }
+
+  .image_home {
+    background-image: url(../../public/icons/home.svg);
+    /* background-position: 30px 12px; */
+  }
+
+  .image_diagrams {
+    background-image: url(../../public/icons/Diagrams.svg);
+    /* background-position: 30px 17px; */
+  }
+
+  .image_currency {
+    background-image: url(../../public/icons/currency.svg);
+    /* background-position: 30px 17px; */
+  }
+}

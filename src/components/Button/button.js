@@ -32,9 +32,9 @@ const Button = ({
     )}
 
     {variant === 'logout' && (
-      <div>
-        <button className={css.button_logout} type={type} name={name} value={value} onClick={onClick}>
-          logout
+      <div className={css.button_logout}>
+        <button className={css.button_logout_link} type={type} name={name} value={value} onClick={onClick}>
+          Logout
         </button>
       </div>
     )}

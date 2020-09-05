@@ -28,20 +28,24 @@
   background-color: #cccaca;
 }
 
-.button_logout {
+.button_logout_link {
   background-color: var(--white-bg-color);
   color: #6b7d83;
   margin: 10px;
-  padding: 1px 5px 1px 20px;
+  /* убрать при интеграии margin */
+  width: 80px;
+  padding-left: 25px;
+  font-size: 15px;
   border: none;
   text-decoration: none;
   outline: none;
   user-select: none;
   background-repeat: no-repeat;
   background-image: url(../../public/icons/exit.svg);
+  background-position: 5px 2px;
 }
 
-.button_logout:hover,
-.button_logout:focus {
+.button_logout_link:hover,
+.button_logout_link:focus {
   color: #56b2d1;
 }
