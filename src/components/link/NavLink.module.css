@@ -1,0 +1,38 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  margin: 30px;
+  /* magin убрать при интеграwии  */
+  width: 300px;
+  height: 80px;
+  padding: 35px 0 35px 0;
+  background-color: #516d57;
+  border-radius: 5px;
+}
+
+.active_link {
+  background-color: #6fa76f;
+}
+
+.link {
+  font-size: 15px;
+  /* width: 240px; */
+  height: 40px;
+  color: #fff;
+  /* display: block; */
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  padding-left: 60px;
+  background-repeat: no-repeat;
+}
+
+.image_home {
+  background-image: url(../../public/icons/home.svg);
+  background-position: 30px 12px;
+}
+
+.image_Diagrams {
+  background-image: url(../../public/icons/Diagrams.svg);
+  background-position: 30px 17px;
+}

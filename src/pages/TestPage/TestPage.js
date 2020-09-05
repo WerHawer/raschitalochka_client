@@ -1,12 +1,10 @@
-import React from "react";
-import RegForm from "components/RegForm/RegForm";
-import Input from "components/Input/Input";
-import Button from "components/Button/button";
-import Radio from "components/Radio/Radio";
+import React from 'react';
+import RegForm from 'components/RegForm/RegForm';
+import Input from 'components/Input/Input';
+import Button from 'components/Button/button';
+import Radio from 'components/Radio/Radio';
 
-
-
-const testWords = ["kokokok", "kolpop", "optop", "okli", "por"];
+const testWords = ['kokokok', 'kolpop', 'optop', 'okli', 'por'];
 
 const TestPage = ({ test, testAction }) => {
   const handleClick = () => {
@@ -22,19 +20,16 @@ const TestPage = ({ test, testAction }) => {
 
       <RegForm />
       <Input />
-
       <Button>Button</Button>
 
-      <Button variant='logout'/>
-
+      <Button variant="logout" />
       <Radio
         elements={[
-          { id: 1, value: "yes" },
-          { id: 2, value: "no" },
+          { id: 1, value: 'yes' },
+          { id: 2, value: 'no' },
         ]}
         name="Categories"
       />
-
     </>
   );
 };
