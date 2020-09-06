@@ -7,7 +7,7 @@ const HeaderPage = () => {
   return (
     <header className={css.wrapper}>
       <div className={css.header}>
-        <Logo />
+        <Logo variant="header" />
         <div className={css.profileNameBlock}>
           <p className={css.profileName}>Name</p>
           <div className={css.button}>

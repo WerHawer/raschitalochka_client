@@ -4,6 +4,7 @@ import Input from 'components/Input/Input';
 import Button from 'components/Button/Button';
 import Radio from 'components/Radio/Radio';
 import Header from 'components/Header/Header';
+import LoginForm from 'components/LoginForm/LoginForm';
 
 const testWords = ['kokokok', 'kolpop', 'optop', 'okli', 'por'];
 
@@ -34,6 +35,7 @@ const TestPage = ({ test, testAction }) => {
         ]}
         name="Categories"
       />
+      <LoginForm />
     </>
   );
 };
