@@ -1,17 +1,13 @@
 .button {
-  text-decoration: none;
+  cursor: pointer;
   user-select: none;
   border: 0;
   border-radius: 3px;
   padding: 8px 40px;
-  outline: none; /* убирать контур в Mozilla */
+  outline: none;
   background-color: var(--good-font-color);
   color: var(--white-bg-color);
   opacity: 1;
-}
-
-.wrapper {
-  margin: 10px;
 }
 
 .button:hover,
@@ -28,24 +24,30 @@
   background-color: #cccaca;
 }
 
-.button_logout_link {
-  background-color: var(--white-bg-color);
-  color: #6b7d83;
-  margin: 10px;
-  /* убрать при интеграии margin */
-  width: 80px;
-  padding-left: 25px;
+/* button Logout */
+
+.button_logout_item {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  width: 90px;
   font-size: 15px;
   border: none;
-  text-decoration: none;
   outline: none;
   user-select: none;
-  background-repeat: no-repeat;
-  background-image: url(../../public/icons/exit.svg);
-  background-position: 5px 2px;
+  color: #6b7d83;
+  background-color: #fff;
 }
 
-.button_logout_link:hover,
-.button_logout_link:focus {
-  color: #56b2d1;
+.button_svg {
+  fill: #669668;
+}
+
+@media (max-width: 767px) {
+  .button_logout_item {
+    display: flex;
+    align-items: center;
+    width: 40px;
+    font-size: 15px;
+  }
 }

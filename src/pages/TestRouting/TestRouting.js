@@ -4,7 +4,6 @@ import css from '../../components/link/NavLink.module.css';
 import { ReactComponent as Diagrams } from '../../public/icons/diagrams.svg';
 import { ReactComponent as Home } from '../../public/icons/home.svg';
 import { ReactComponent as Currency } from '../../public/icons/currency.svg';
-
 import Media from 'react-media';
 
 const TestRouting = () => {
@@ -65,11 +64,6 @@ const TestRouting = () => {
           </Fragment>
         )}
       </Media>
-      {/* <div className={css.wrapper}>
-        <NavLinkCustom to={'/home'} children={'Home'} name={'home'} />
-        <NavLinkCustom to={'/diagrams'} children={'Diagrams'} name={'diagrams'} />
-        <NavLinkCustom to={'/currency'} children={'currency'} name={'currency'} />
-      </div> */}
     </>
   );
 };
