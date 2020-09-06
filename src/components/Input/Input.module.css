@@ -37,6 +37,8 @@
 }
 
 .errorText {
+  display: block;
   width: 100%;
   text-align: center;
+  padding: 10px 0;
 }

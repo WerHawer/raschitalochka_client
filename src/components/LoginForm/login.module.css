@@ -4,17 +4,12 @@
   flex-direction: column;
   align-items: center;
   width: 85%;
-  margin-bottom: 50px;
 }
 
 .form div:not(:first-of-type) {
   margin-bottom: 12px;
 }
 
-/* .form div .inputWrapper {
-  width: 100%;
-  margin-bottom: 14px;
-} */
 .form button {
   width: 100%;
 }
