@@ -18,6 +18,9 @@ const App = () => {
       <Switch>
         <Route path="/" exact component={TestPage} />
         <Route path="/test" component={TestRouting} />
+        <Route path="/home" component={TestRouting} />
+        <Route path="/diagrams" component={TestRouting} />
+        <Route path="/currency" component={TestRouting} />
         <Redirect to="/" />
       </Switch>
     </>
