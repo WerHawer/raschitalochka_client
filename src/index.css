@@ -1,5 +1,5 @@
-@import './fonts//font.css';
-
+@import './fonts/font.css';
+@import './reset.css';
 :root {
   --main-bg-color: #eef0f4;
   --secondary-bg-color: #f3f6f6;
@@ -30,4 +30,10 @@
 
 body {
   font-family: 'HelveticaNeueCyr';
+  box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
 }
