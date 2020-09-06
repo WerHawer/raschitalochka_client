@@ -1,10 +1,10 @@
-import React from "react";
-import PropTypes from "prop-types";
-import css from "./button.module.css";
-import Spinner from "./button-loader/button-spinner";
+import React from 'react';
+import PropTypes from 'prop-types';
+import css from './button.module.css';
+import Spinner from './button-loader/button-spinner';
 
 const Button = ({
-  variant = "standart",
+  variant = 'standart',
   children,
   type,
   name,
@@ -15,7 +15,7 @@ const Button = ({
   isLoading = true,
 }) => (
   <>
-    {variant === "standart" && (
+    {variant === 'standart' && (
       <div className={css.wrapper}>
         <button
           className={disabled ? css.button_disabled : css.button}
@@ -31,15 +31,9 @@ const Button = ({
       </div>
     )}
 
-    {variant === "logout" && (
+    {variant === 'logout' && (
       <div>
-        <button
-          className={css.button_logout}
-          type={type}
-          name={name}
-          value={value}
-          onClick={onClick}
-        >
+        <button className={css.button_logout} type={type} name={name} value={value} onClick={onClick}>
           logout
         </button>
       </div>
