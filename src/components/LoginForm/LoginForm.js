@@ -53,7 +53,8 @@ const LoginForm = (props) => {
           ))}
         </>
       )}
-      {/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!here are exist some link */}
+      {/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!here are exist some link , below - example*/}
+      <a href="#">Register</a>
     </form>
   );
 };

@@ -1,5 +1,6 @@
 :global(.inputWrapper) {
   position: relative;
+  width: 100%;
 }
 
 .input {
@@ -36,7 +37,6 @@
 }
 
 .errorText {
-  position: absolute;
-  bottom: -19px;
-  left: 58px;
+  width: 100%;
+  text-align: center;
 }
