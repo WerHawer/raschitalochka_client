@@ -3,6 +3,7 @@ import RegForm from 'components/RegForm/RegForm';
 import Button from 'components/Button/Button';
 import Radio from 'components/Radio/Radio';
 import LoginForm from 'components/LoginForm/LoginForm';
+import ActionInfo from 'components/ActionInfo/ActionInfo';
 
 const testWords = ['kokokok', 'kolpop', 'optop', 'okli', 'por'];
 
@@ -32,6 +33,8 @@ const TestPage = ({ test, testAction }) => {
         ]}
         name="Categories"
       />
+
+      <ActionInfo />
     </>
   );
 };

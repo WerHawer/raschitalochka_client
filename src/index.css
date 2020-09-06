@@ -1,4 +1,4 @@
-@import "./fonts//font.css";
+@import './fonts//font.css';
 
 :root {
   --main-bg-color: #eef0f4;
@@ -26,5 +26,13 @@
 }
 
 body {
-  font-family: "HelveticaNeueCyr";
+  font-family: 'HelveticaNeueCyr', Arial, Helvetica, sans-serif;
+
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
 }
