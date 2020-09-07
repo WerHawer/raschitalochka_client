@@ -1,0 +1,12 @@
+.navBar {
+  height: 7.04vh;
+  background-color: #3a5374;
+  margin-bottom: 3.52vh;
+}
+
+.navBarList {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
