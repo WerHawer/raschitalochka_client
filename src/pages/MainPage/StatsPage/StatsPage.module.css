@@ -1,0 +1,43 @@
+.pageWrapper {
+  position: relative;
+  height: 100%;
+}
+
+.container {
+  width: 310px;
+  padding-left: 2px;
+  padding-right: 2px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.diagramm {
+  height: 51.05vh;
+  background-color: #3a5374;
+}
+
+.datePicker {
+  height: 11.97vh;
+  /* delete all below this line */
+  background-color: #a8a8a8;
+  padding: 3vh 0;
+  text-align: center;
+}
+
+.transactionsTable {
+  height: 76.23vh;
+  background-color: #3a5374;
+}
+
+.transactionsSummary:before {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: #777777;
+}
+
+.transactionsSummary {
+  height: 16.02vh;
+  background-color: #a8a8a8;
+}
