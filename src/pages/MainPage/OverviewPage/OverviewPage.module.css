@@ -1,0 +1,55 @@
+.pageWrapper {
+  position: relative;
+  height: 100%;
+}
+
+.container {
+  width: 310px;
+  padding-left: 2px;
+  padding-right: 2px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.balanceBar {
+  height: 16.2vh;
+  margin: 0 auto;
+  margin-bottom: 3.52vh;
+  background-color: #3a5374;
+  border-radius: 5px;
+}
+
+.transactionsList {
+  display: flex;
+  flex-direction: column;
+}
+
+.transactionsListItem {
+  height: 47.5vh;
+  background-color: #3a5374;
+  margin-bottom: 2.8vh;
+}
+
+.AddTransaction {
+  position: fixed;
+  bottom: 1.4vh;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 54px;
+  width: 54px;
+  border-radius: 50%;
+  border: none;
+  background-color: #ff6c00;
+  font-size: 35px;
+  color: #ffffff;
+  z-index: 2;
+}
+
+.mobileFooter {
+  position: fixed;
+  bottom: 0;
+  height: 7.57vh;
+  width: 100%;
+  background-color: rgba(115, 131, 151, 0.5);
+  z-index: 1;
+}
