@@ -17,6 +17,10 @@
   --alarm-color: #ff6c00;
   --good-font-color: #75c16e;
   --placeholder-input-color: #b9c9d4;
+  /* link color */
+  --active-link-bg-color: #6fa76f;
+  --wrapper-link-bg-color: #516d57;
+  --active-link-media-bg-color: #669668;
 
   --gradient-color: linear-gradient(
     90deg,
@@ -39,4 +43,16 @@ body {
 *:before,
 *:after {
   box-sizing: inherit;
+}
+.progress1 {
+  width: 25%;
+}
+.progress2 {
+  width: 50%;
+}
+.progress3 {
+  width: 75%;
+}
+.progress4 {
+  width: 100%;
 }
