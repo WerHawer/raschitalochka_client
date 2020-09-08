@@ -10,6 +10,11 @@
   opacity: 1;
 }
 
+.wrapper {
+  margin: 10px;
+  width: 100%;
+}
+
 .button:hover,
 .button:focus {
   background-image: var(--gradient-color);

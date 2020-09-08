@@ -1,10 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import Input from 'components/Input/Input';
+import Button from 'components/Button/Button';
+import Logo from 'components/LogoHeader/Logo';
+
 import { withFormik } from 'formik';
 import * as Yup from 'yup';
-import Input from 'components/Input/Input';
-import css from './RegForm.module.css';
+import css from './login.module.css';
 
-const RegForm = ({ values, errors, touched, handleChange, handleBlur, handleSubmit, loader, localError }) => {
+const LoginForm = (props) => {
+  const { values, errors, touched, handleChange, handleBlur, handleSubmit, loader, localError } = props;
   const [serverErrorsArr, setServerErrorsArr] = useState([]);
 
   useEffect(() => {
@@ -19,7 +23,9 @@ const RegForm = ({ values, errors, touched, handleChange, handleBlur, handleSubm
 
   return (
     <form onSubmit={handleSubmit} className={css.form}>
+      <Logo variant="form" />
       <Input
+        className={css.input}
         value={values.email}
         name="email"
         type="email"
@@ -29,7 +35,6 @@ const RegForm = ({ values, errors, touched, handleChange, handleBlur, handleSubm
         error={errors.email}
         touched={touched.email}
       />
-
       <Input
         value={values.password}
         name="password"
@@ -40,33 +45,7 @@ const RegForm = ({ values, errors, touched, handleChange, handleBlur, handleSubm
         error={errors.password}
         touched={touched.password}
       />
-
-      <Input
-        value={values.password_confirm}
-        name="password_confirm"
-        type="password"
-        placeholder="Password Confirmation"
-        onChange={handleChange}
-        onBlur={handleBlur}
-        error={errors.password_confirm}
-        touched={touched.password_confirm}
-      />
-
-      <Input
-        value={values.name}
-        name="name"
-        type="text"
-        placeholder="Your Name"
-        onChange={handleChange}
-        onBlur={handleBlur}
-        error={errors.name}
-        touched={touched.name}
-      />
-
-      <div className={css.btn_container}>
-        <Button type="submit">Register</Button>
-      </div>
-
+      <Button type="submit">Enter</Button>{' '}
       {localError && (
         <>
           {serverErrorsArr.map((err) => (
@@ -74,6 +53,8 @@ const RegForm = ({ values, errors, touched, handleChange, handleBlur, handleSubm
           ))}
         </>
       )}
+      {/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!here are exist some link , below - example*/}
+      <a href="#">Register</a>
     </form>
   );
 };
@@ -82,20 +63,14 @@ export default withFormik({
   mapPropsToValues: (props) => ({
     email: props.initialEmail || '',
     password: props.initialPassword || '',
-    password_confirm: props.initialPassword || '',
-    name: props.initialPassword || '',
   }),
 
   validationSchema: Yup.object().shape({
-    name: Yup.string().required('Name is required'),
     email: Yup.string().email('Email not valid').required('Email is required'),
     password: Yup.string().required('Password is required'),
-    password_confirm: Yup.string()
-      .required('confirm password')
-      .oneOf([Yup.ref('password')], 'Passwords must match'),
   }),
 
   handleSubmit: (values, { props }) => {
     console.log(values, props);
   },
-})(RegForm);
+})(LoginForm);
