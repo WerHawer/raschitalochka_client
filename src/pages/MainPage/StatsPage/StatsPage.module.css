@@ -3,6 +3,11 @@
   height: 100%;
 }
 
+.navBar {
+  height: 7.21vh;
+  margin-bottom: 3.52vh;
+}
+
 .diagramm,
 .datePicker,
 .transactionsTable,
@@ -11,22 +16,21 @@
   width: 280px;
 }
 
-.diagramm {
-  height: 51.05vh;
-  background-color: #3a5374;
+.diagrammAndTransactionsTable {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 90.7vh;
 }
 
-.datePicker {
-  height: 11.97vh;
-  /* delete all below this line */
-  background-color: #a8a8a8;
-  padding: 3vh 0;
-  text-align: center;
+.diagramm {
+  background-color: #305174;
+  height: 45vh;
 }
 
 .transactionsTable {
-  height: 76.23vh;
   background-color: #3a5374;
+  height: 45vh;
 }
 
 .transactionsSummary:before {
@@ -38,8 +42,18 @@
 }
 
 .transactionsSummary {
-  height: 16.02vh;
+  height: 8.8vh;
   background-color: #a8a8a8;
+}
+
+.currencyWidget {
+  display: none;
+  background-color: #3a5374;
+}
+
+.balanceBar {
+  display: none;
+  background-color: #3a5374;
 }
 
 @media screen and (min-width: 768px) {
@@ -48,13 +62,9 @@
     width: 704px;
   }
 
-  .diagramm {
-    height: 53.68vh;
-  }
-
-  .transactionsTable {
-    height: 0;
-    min-height: 17.6vh;
+  .navBar {
+    height: 9.41vh;
+    margin-bottom: 0;
   }
 
   .transactionsSummary {
@@ -66,23 +76,46 @@
 @media screen and (min-width: 1024px) {
   .pageWrapper {
     width: 100%;
+    height: 91.68vh;
+    padding-top: 4.6vh;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(7, 1fr);
     grid-column-gap: 27px;
     grid-row-gap: 30px;
   }
 
-  .div1 {
+  .transactionsSummary {
+    display: none;
+  }
+
+  .navBar {
+    width: 100%;
+  }
+
+  .transactionsTable,
+  .diagramm {
+    width: 100%;
+  }
+
+  .navBar {
+    margin-bottom: 0;
     grid-area: 1 / 1 / 3 / 2;
   }
-  .div2 {
-    grid-area: 3 / 1 / 5 / 2;
+  .balanceBar {
+    display: block;
+    height: auto;
+    grid-area: 3 / 1 / 4 / 2;
   }
-  .div3 {
-    grid-area: 5 / 1 / 8 / 2;
+  .currencyWidget {
+    display: block;
+    width: 100%;
+    height: auto;
+    grid-area: 4 / 1 / 8 / 2;
   }
-  .div4 {
-    grid-area: 1 / 2 / 8 / 3;
+  .diagrammAndTransactionsTable {
+    height: auto;
+    display: flex;
+    grid-area: 1 / 2 / 8 / 4;
   }
 }

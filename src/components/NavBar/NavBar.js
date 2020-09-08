@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
 import Styles from './NavBar.module.css';
 
@@ -20,5 +21,9 @@ const NavBar = ({ balance }) => (
     </ul>
   </nav>
 );
+
+NavBar.propTypes = {
+  balance: PropTypes.number,
+};
 
 export default NavBar;
