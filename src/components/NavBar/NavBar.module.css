@@ -1,7 +1,7 @@
 .navBar {
-  height: 7.04vh;
+  display: flex;
+  height: 100%;
   background-color: #3a5374;
-  margin-bottom: 3.52vh;
 }
 
 .navBarList {
@@ -29,7 +29,7 @@
 
 @media screen and (min-width: 768px) and (max-width: 1023px) {
   .navBar {
-    background-color: #f7f9f9;
+    background-color: #ffffff;
   }
 
   .navBarList {
@@ -59,8 +59,8 @@
 
 @media screen and (min-width: 1024px) {
   .navBar {
-    width: 312px;
-    height: 16.94vh;
+    margin: 0;
+    width: 100%;
   }
 
   .navBarList {
