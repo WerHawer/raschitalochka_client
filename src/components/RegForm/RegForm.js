@@ -3,6 +3,7 @@ import { withFormik } from 'formik';
 import * as Yup from 'yup';
 import Input from 'components/Input/Input';
 import css from './RegForm.module.css';
+import ProgressBar from 'components/ProgressBar/ProgressBar';
 
 const RegForm = (props) => {
   const { values, errors, touched, handleChange, handleBlur, handleSubmit, loader, localError } = props;
@@ -53,6 +54,7 @@ const RegForm = (props) => {
         error={errors.password_confirm}
         touched={touched.password_confirm}
       />
+      <ProgressBar value={2} />
 
       <Input
         value={values.name}
