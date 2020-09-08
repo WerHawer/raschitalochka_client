@@ -3,17 +3,14 @@
   height: 100%;
 }
 
-.container {
-  width: 310px;
-  padding-left: 2px;
-  padding-right: 2px;
-  margin-left: auto;
-  margin-right: auto;
+.balanceBar,
+.transactionsList {
+  width: 306px;
+  margin: 0 auto;
 }
 
 .balanceBar {
   height: 16.2vh;
-  margin: 0 auto;
   margin-bottom: 3.52vh;
   background-color: #3a5374;
   border-radius: 5px;
@@ -30,11 +27,11 @@
   margin-bottom: 2.8vh;
 }
 
-.AddTransaction {
+.addTransaction {
   position: fixed;
   bottom: 1.4vh;
-  left: 50%;
-  transform: translateX(-50%);
+  right: 50%;
+  transform: translateX(50%);
   height: 54px;
   width: 54px;
   border-radius: 50%;
@@ -52,4 +49,54 @@
   width: 100%;
   background-color: rgba(115, 131, 151, 0.5);
   z-index: 1;
+}
+
+.currencyComponent {
+  display: none;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .pageWrapper {
+    min-height: 100vh;
+    background: url(../../../public/image/bg-tablet.png) bottom no-repeat;
+    background-size: contain;
+    width: 100vw;
+  }
+
+  .balanceBar {
+    display: none;
+  }
+
+  .transactionsList {
+    width: 748px;
+  }
+
+  .addTransaction {
+    bottom: 5.07vh;
+    right: 88px;
+  }
+
+  .currencyComponent {
+    position: fixed;
+    display: block;
+    width: 352px;
+    height: 170px;
+    background-color: #3a5374;
+    left: 33px;
+    bottom: 52px;
+  }
+
+  .mobileFooter {
+    display: none;
+  }
+}
+
+@media (min-width: 1024px) {
+  .pageWrapper {
+    padding-top: 5.3vh;
+  }
+
+  .balanceBar {
+    display: block;
+  }
 }
