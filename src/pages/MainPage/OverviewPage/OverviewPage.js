@@ -1,6 +1,7 @@
 import React from 'react';
 import Styles from './OverviewPage.module.css';
-import NavBar from '../../../components/NavBar/NavBar';
+import NavBar from 'components/NavBar/NavBar';
+import ActionInfo from 'components/ActionInfo/ActionInfo';
 
 const OverviewPage = () => (
   <div className={Styles.pageWrapper}>
@@ -17,12 +18,7 @@ const OverviewPage = () => (
         <button>Add Income</button>
         <button>Add Cost</button>
       </div>
-      <div className={Styles.transactionsListItem}>
-        {/* Place for transactions, 
-          use this child <div> for wrapping each transaction 
-          or replace parent <div> with your component 
-          and add parents <div>'s classname */}
-      </div>
+      <ActionInfo />
     </div>
     <div className={Styles.currencyWidget}></div>
   </div>
