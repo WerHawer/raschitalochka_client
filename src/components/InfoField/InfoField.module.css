@@ -1,0 +1,22 @@
+.wrapper {
+  width: 100%;
+  font-size: 13px;
+  font-family: Helvetica;
+  padding: 19px 16px;
+  display: flex;
+}
+
+.name {
+  width: 50%;
+}
+
+@media (min-width: 767px) {
+  .name {
+    display: none;
+  }
+
+  .value {
+    width: 100%;
+    text-align: center;
+  }
+}

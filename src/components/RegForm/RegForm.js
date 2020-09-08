@@ -4,9 +4,7 @@ import * as Yup from 'yup';
 import Input from 'components/Input/Input';
 import css from './RegForm.module.css';
 
-const RegForm = (props) => {
-  const { values, errors, touched, handleChange, handleBlur, handleSubmit, loader, localError } = props;
-
+const RegForm = ({ values, errors, touched, handleChange, handleBlur, handleSubmit, loader, localError }) => {
   const [serverErrorsArr, setServerErrorsArr] = useState([]);
 
   useEffect(() => {
@@ -64,6 +62,10 @@ const RegForm = (props) => {
         error={errors.name}
         touched={touched.name}
       />
+
+      <div className={css.btn_container}>
+        <Button type="submit">Register</Button>
+      </div>
 
       {localError && (
         <>
