@@ -4,14 +4,13 @@ import Styles from './StatsPage.module.css';
 
 const StatsPage = () => (
   <div className={Styles.pageWrapper}>
-    <NavBar />
-    <div className={Styles.container}>
-      <div className={Styles.diagramm}>
-        {/* Place for diagramm */}
-        {/* ///////// */}
-      </div>
-      <div className={Styles.datePicker}>Here should be date picker</div>
+    <NavBar balance={24000} />
+    <div className={Styles.diagramm}>
+      {/* Place for diagramm */}
+      {/* ///////// */}
     </div>
+    <div className={Styles.datePicker}>Here should be date picker</div>
+
     <div className={Styles.transactionsTable}>
       {/* Place for transaction table */}
       {/* ///////// */}
