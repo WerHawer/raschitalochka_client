@@ -3,7 +3,6 @@ import css from './logo.module.css';
 import Media from 'react-media';
 
 const Logo = ({ variant = 'header' }) => {
-  console.log('variant', variant === 'header');
   return (
     <>
       {variant === 'header' && (

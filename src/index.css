@@ -40,3 +40,15 @@ body {
 *:after {
   box-sizing: inherit;
 }
+.progress1 {
+  width: 25%;
+}
+.progress2 {
+  width: 50%;
+}
+.progress3 {
+  width: 75%;
+}
+.progress4 {
+  width: 100%;
+}
