@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { withFormik } from 'formik';
 import * as Yup from 'yup';
 import Input from 'components/Input/Input';
-import Button from 'components/Button/Button';
 import css from './RegForm.module.css';
 
 const RegForm = ({ values, errors, touched, handleChange, handleBlur, handleSubmit, loader, localError }) => {
@@ -16,12 +15,7 @@ const RegForm = ({ values, errors, touched, handleChange, handleBlur, handleSubm
     }
   }, [localError]);
 
-  const isButtonDisabled =
-    loader ||
-    !!(errors.email && touched.email) ||
-    !!(errors.password && touched.password) ||
-    (errors.password_confirm && touched.password_confirm) ||
-    (errors.name && touched.name);
+  const isButtonDisabled = loader || !!(errors.email && touched.email) || !!(errors.password && touched.password);
 
   return (
     <form onSubmit={handleSubmit} className={css.form}>
