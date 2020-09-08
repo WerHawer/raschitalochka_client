@@ -29,11 +29,13 @@
 }
 
 body {
-  font-family: 'HelveticaNeueCyr';
+  font-family: 'HelveticaNeueCyr', Arial, Helvetica, sans-serif;
+
   box-sizing: border-box;
 }
+
 *,
-*::before,
-*::after {
+*:before,
+*:after {
   box-sizing: inherit;
 }

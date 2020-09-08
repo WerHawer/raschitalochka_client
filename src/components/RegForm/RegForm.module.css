@@ -7,3 +7,8 @@
 .form > :global(.inputWrapper) {
   margin-bottom: 30px;
 }
+
+.btn_container {
+  display: flex;
+  justify-content: center;
+}
