@@ -5,6 +5,7 @@
 .wrapper {
   display: flex;
   box-shadow: 14.095px 5.13px 9px 0px rgba(1, 1, 0, 0.08);
+  margin-bottom: 18px;
 }
 
 .header {
