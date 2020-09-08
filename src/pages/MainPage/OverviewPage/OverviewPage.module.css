@@ -145,3 +145,53 @@
     box-shadow: 0px 16px 16px -5px rgba(0, 0, 0, 0.75);
   }
 }
+
+.currencyComponent {
+  display: none;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .pageWrapper {
+    min-height: 100vh;
+    background: url(../../../public/image/bg-tablet.png) bottom no-repeat;
+    background-size: contain;
+    width: 100vw;
+  }
+
+  .balanceBar {
+    display: none;
+  }
+
+  .transactionsList {
+    width: 748px;
+  }
+
+  .addTransaction {
+    bottom: 5.07vh;
+    right: 88px;
+  }
+
+  .currencyComponent {
+    position: fixed;
+    display: block;
+    width: 352px;
+    height: 170px;
+    background-color: #3a5374;
+    left: 33px;
+    bottom: 52px;
+  }
+
+  .mobileFooter {
+    display: none;
+  }
+}
+
+@media (min-width: 1024px) {
+  .pageWrapper {
+    padding-top: 5.3vh;
+  }
+
+  .balanceBar {
+    display: block;
+  }
+}
