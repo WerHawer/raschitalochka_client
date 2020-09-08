@@ -5,11 +5,9 @@ import Styles from './CurrencyPage.module.css';
 const CurrencyPage = () => (
   <div className={Styles.pageWrapper}>
     <NavBar />
-    <div className={Styles.container}>
-      <div className={Styles.currencyWidget}>
-        {/* Place for currency widget */}
-        {/* ///////// */}
-      </div>
+    <div className={Styles.currencyWidget}>
+      {/* Place for currency widget */}
+      {/* ///////// */}
     </div>
   </div>
 );

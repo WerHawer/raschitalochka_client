@@ -2,17 +2,20 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import Styles from './NavBar.module.css';
 
-const NavBar = () => (
+const NavBar = ({ balance }) => (
   <nav className={Styles.navBar}>
     <ul className={Styles.navBarList}>
-      <li>
-        <NavLink to="/">Overview</NavLink>
+      <li className={Styles.navBarListItem}>
+        <NavLink to="/">Главная</NavLink>
       </li>
-      <li>
-        <NavLink to="/stats">stats</NavLink>
+      <li className={Styles.navBarListItem}>
+        <NavLink to="/stats">Статистика</NavLink>
       </li>
-      <li>
-        <NavLink to="/currency">currency</NavLink>
+      <li className={Styles.navBarListItemCurrency}>
+        <NavLink to="/currency">Курс Валют</NavLink>
+      </li>
+      <li className={Styles.navBarListItemBalance}>
+        <p>Баланс: {balance} грн</p>
       </li>
     </ul>
   </nav>
