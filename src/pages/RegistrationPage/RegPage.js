@@ -1,10 +1,10 @@
 import React from 'react';
 import Media from 'react-media';
-import LoginForm from 'components/LoginForm/LoginForm';
-import css from './loginPage.module.css';
+import RegForm from 'components/RegForm/RegForm';
+import css from './regPage.module.css';
 
 const RegistrationPage = () => (
-  <div className={css.loginPageWrapper}>
+  <div className={css.regPageWrapper}>
     <Media
       queries={{
         small: '(max-width: 767px)',
@@ -15,22 +15,22 @@ const RegistrationPage = () => (
       {(matches) => (
         <>
           {matches.small && (
-            <div className={css.loginPage}>
-              <LoginForm />
+            <div className={css.registrationPage}>
+              <RegForm />
             </div>
           )}
           {matches.medium && (
-            <div className={css.loginPage}>
-              <LoginForm />
-              <p className={css.subtitle}>Manage your budget with finance app</p>
+            <div className={css.registrationPage}>
+              <RegForm />
             </div>
           )}
           {matches.large && (
             <>
-              <div className={css.loginLeftSide}></div>
-              <div className={css.loginPage}>
-                <LoginForm />
-                <p className={css.subtitle}>Manage your budget with finance app</p>
+              <div className={css.regLeftSide}>
+                <h1 className={css.regDesktopTitle}>Create your own categories of costs</h1>
+              </div>
+              <div className={css.registrationPage}>
+                <RegForm />
               </div>
             </>
           )}
