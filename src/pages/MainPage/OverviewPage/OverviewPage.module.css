@@ -3,8 +3,14 @@
   height: 100%;
 }
 
+.navBar {
+  height: 7.21vh;
+  margin-bottom: 3.52vh;
+}
+
 .balanceBar,
-.transactionsList {
+.transactionsList,
+.addTransaction {
   width: 306px;
   margin: 0 auto;
 }
@@ -29,33 +35,23 @@
 
 .addTransaction {
   position: fixed;
-  bottom: 1.4vh;
+  display: flex;
+  justify-content: center;
+  bottom: 0;
   right: 50%;
   transform: translateX(50%);
-  height: 54px;
-  width: 54px;
-  border-radius: 50%;
+  height: 68px;
   border: none;
-  background-color: #ff6c00;
   font-size: 35px;
-  color: #ffffff;
+  background-color: var(--white-bg-color);
   z-index: 2;
 }
 
-.mobileFooter {
-  position: fixed;
-  bottom: 0;
-  height: 7.57vh;
-  width: 100%;
-  background-color: rgba(115, 131, 151, 0.5);
-  z-index: 1;
-}
-
-.currencyComponent {
+.currencyWidget {
   display: none;
 }
 
-@media screen and (min-width: 768px) and (max-width: 1023px) {
+@media screen and (min-width: 768px) {
   .pageWrapper {
     min-height: 100vh;
     background: url(../../../public/image/bg-tablet.png) bottom no-repeat;
@@ -63,20 +59,31 @@
     width: 100vw;
   }
 
+  .navBar {
+    height: 9.41vh;
+    margin-bottom: 0;
+  }
+
   .balanceBar {
     display: none;
   }
 
-  .transactionsList {
-    width: 748px;
+  .transactionsList,
+  .addTransaction {
+    width: 705px;
   }
 
   .addTransaction {
-    bottom: 5.07vh;
-    right: 88px;
+    margin: 0 auto;
+    position: relative;
+    transform: none;
+    width: 100%;
+    right: 0;
+    height: 8.78vh;
+    background-color: var(--primary-green);
   }
 
-  .currencyComponent {
+  .currencyWidget {
     position: fixed;
     display: block;
     width: 352px;
@@ -85,18 +92,48 @@
     left: 33px;
     bottom: 52px;
   }
-
-  .mobileFooter {
-    display: none;
-  }
 }
 
 @media (min-width: 1024px) {
   .pageWrapper {
-    padding-top: 5.3vh;
+    background: none;
+    width: 100%;
+    height: 91.68vh;
+    padding-top: 4.6vh;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(7, 1fr);
+    grid-column-gap: 27px;
+    grid-row-gap: 30px;
   }
 
   .balanceBar {
     display: block;
+  }
+
+  .navBar {
+    width: 100%;
+    margin-bottom: 0;
+    grid-area: 1 / 1 / 3 / 2;
+    height: auto;
+  }
+  .balanceBar {
+    width: 100%;
+    height: auto;
+    margin: 0;
+    grid-area: 3 / 1 / 4 / 2;
+  }
+  .currencyWidget {
+    position: relative;
+    grid-area: 4 / 1 / 8 / 2;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: auto;
+  }
+  .transactionsList {
+    height: auto;
+    width: 100%;
+    grid-area: 1 / 2 / 8 / 4;
   }
 }
