@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import NavLinkCustom from 'components/link/NavLinkCustom';
+import NavLinkCustom from 'components/Nav-link/NavLinkCustom';
 import css from '../../components/link/NavLink.module.css';
 import { ReactComponent as Diagrams } from '../../public/icons/diagrams.svg';
 import { ReactComponent as Home } from '../../public/icons/home.svg';
