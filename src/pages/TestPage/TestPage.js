@@ -5,6 +5,7 @@ import Button from 'components/Button/Button';
 import Radio from 'components/Radio/Radio';
 import Header from 'components/Header/Header';
 import LoginForm from 'components/LoginForm/LoginForm';
+import ActionInfo from 'components/ActionInfo/ActionInfo';
 
 const testWords = ['kokokok', 'kolpop', 'optop', 'okli', 'por'];
 
@@ -36,6 +37,8 @@ const TestPage = ({ test, testAction }) => {
         name="Categories"
       />
       <LoginForm />
+
+      <ActionInfo />
     </>
   );
 };
