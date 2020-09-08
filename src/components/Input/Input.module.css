@@ -42,3 +42,34 @@
   text-align: center;
   padding: 10px 0;
 }
+
+.inputVariant__amount,
+.inputVariant__income {
+  padding: 0;
+  border: 2px solid var(--placeholder-input-color);
+  border-radius: 8px;
+  text-align: center;
+  font-weight: 700;
+}
+
+.inputVariant__amount {
+  color: var(--alarm-color);
+}
+
+.inputVariant__income {
+  color: var(--good-font-color);
+}
+
+.inputVariant__amount::placeholder,
+.inputVariant__income::placeholder {
+  text-align: center;
+  font-weight: 700;
+}
+
+.inputVariant__income::placeholder {
+  color: var(--good-font-color);
+}
+
+.inputVariant__amount::placeholder {
+  color: var(--alarm-color);
+}

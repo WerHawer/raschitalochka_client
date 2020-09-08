@@ -4,14 +4,14 @@
   border: 0;
   border-radius: 3px;
   padding: 8px 40px;
-  outline: none;
-  background-color: var(--good-font-color);
-  color: var(--white-bg-color);
+  outline: none; /* убирать контур в Mozilla */
+  background-color: var(--green-bg-color);
+  color: #fff;
   opacity: 1;
+  width: 100%;
 }
 
 .wrapper {
-  margin: 10px;
   width: 100%;
 }
 
@@ -21,6 +21,7 @@
 }
 
 .button_disabled {
+  width: 100%;
   text-decoration: none;
   border: 0;
   border-radius: 3px;

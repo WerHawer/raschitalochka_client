@@ -1,3 +1,4 @@
-import { createAction } from "@reduxjs/toolkit";
+import { createAction } from '@reduxjs/toolkit';
 
-export const testAction = createAction("test-redux");
+export const addModal = createAction('modal/add');
+export const removeModal = createAction('modal/remove');

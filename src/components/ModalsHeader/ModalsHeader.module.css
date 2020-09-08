@@ -1,0 +1,44 @@
+.wrapper {
+  padding: 16px 49px 15px;
+  background-color: var(--green-bg-color);
+  position: relative;
+}
+
+.name {
+  text-transform: uppercase;
+  color: var(--secondary-font-color);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.arrow {
+  width: 24px;
+  height: 11px;
+  position: absolute;
+  top: center;
+  left: 8px;
+  transform: translateY(25%);
+  background-image: url('../../public/icons/arrow.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .wrapper {
+    padding: 32px 0;
+    background-color: var(--grey-bg-color);
+    display: flex;
+    justify-content: center;
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+  }
+
+  .arrow {
+    display: none;
+  }
+
+  .name {
+    color: var(--primary-font-color);
+  }
+}
