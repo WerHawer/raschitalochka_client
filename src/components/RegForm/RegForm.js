@@ -3,6 +3,9 @@ import { withFormik } from 'formik';
 import * as Yup from 'yup';
 import Input from 'components/Input/Input';
 import css from './RegForm.module.css';
+import ProgressBar from 'components/ProgressBar/ProgressBar';
+import Button from 'components/Button/Button';
+import Logo from 'components/LogoHeader/Logo';
 
 const RegForm = ({ values, errors, touched, handleChange, handleBlur, handleSubmit, loader, localError }) => {
   const [serverErrorsArr, setServerErrorsArr] = useState([]);
@@ -19,6 +22,7 @@ const RegForm = ({ values, errors, touched, handleChange, handleBlur, handleSubm
 
   return (
     <form onSubmit={handleSubmit} className={css.form}>
+      <Logo variant="form" />
       <Input
         value={values.email}
         name="email"
@@ -29,7 +33,6 @@ const RegForm = ({ values, errors, touched, handleChange, handleBlur, handleSubm
         error={errors.email}
         touched={touched.email}
       />
-
       <Input
         value={values.password}
         name="password"
@@ -40,7 +43,6 @@ const RegForm = ({ values, errors, touched, handleChange, handleBlur, handleSubm
         error={errors.password}
         touched={touched.password}
       />
-
       <Input
         value={values.password_confirm}
         name="password_confirm"
@@ -51,7 +53,7 @@ const RegForm = ({ values, errors, touched, handleChange, handleBlur, handleSubm
         error={errors.password_confirm}
         touched={touched.password_confirm}
       />
-
+      <ProgressBar value={2} />
       <Input
         value={values.name}
         name="name"
@@ -62,11 +64,11 @@ const RegForm = ({ values, errors, touched, handleChange, handleBlur, handleSubm
         error={errors.name}
         touched={touched.name}
       />
-
       <div className={css.btn_container}>
         <Button type="submit">Register</Button>
       </div>
-
+      {/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!here are exist some link , below - example*/}
+      <a href="#">Login</a>
       {localError && (
         <>
           {serverErrorsArr.map((err) => (
