@@ -1,0 +1,18 @@
+.pageWrapper {
+  position: relative;
+  height: 86.1vh;
+  background: url(../../../public/image/bg.png) bottom no-repeat;
+  background-size: contain;
+  width: 100vw;
+}
+
+.navBar {
+  height: 7.21vh;
+  margin-bottom: 3.52vh;
+}
+
+.currencyWidget {
+  height: 33.45vh;
+  background-color: #3a5374;
+  border-radius: 5px;
+}
