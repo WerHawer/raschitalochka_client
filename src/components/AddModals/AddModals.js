@@ -5,7 +5,7 @@ import * as Yup from 'yup';
 import Input from 'components/Input/Input';
 import Radio from 'components/Radio/Radio';
 import Button from 'components/Button/Button';
-import ModalsHeader from 'components/ModalsHeader/ModalsHeader';
+import ModalsHeader from 'components/ModalsHeader/ModalsHeaderContainer';
 import DateInput from 'components/DateInput/DateInput';
 import css from './AddModals.module.css';
 

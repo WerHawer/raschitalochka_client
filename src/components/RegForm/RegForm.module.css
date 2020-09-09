@@ -43,3 +43,8 @@
     padding: 50px;
   }
 }
+
+.btn_container {
+  display: flex;
+  justify-content: center;
+}
