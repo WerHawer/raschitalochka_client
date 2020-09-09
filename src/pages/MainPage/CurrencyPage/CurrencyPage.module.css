@@ -6,12 +6,9 @@
   width: 100vw;
 }
 
-.container {
-  width: 310px;
-  padding-left: 2px;
-  padding-right: 2px;
-  margin-left: auto;
-  margin-right: auto;
+.navBar {
+  height: 7.21vh;
+  margin-bottom: 3.52vh;
 }
 
 .currencyWidget {
