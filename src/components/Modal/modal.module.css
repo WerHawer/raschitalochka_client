@@ -15,6 +15,7 @@
 
 @media (max-width: 767px) {
   .wrapper {
-    display: none;
+    background-color: transparent;
+    padding-top: 80px;
   }
 }

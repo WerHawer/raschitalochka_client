@@ -1,5 +1,8 @@
 .wrapper {
+  width: 100%;
   background-color: #fff;
+  min-height: 100vh;
+  overflow: scroll;
 }
 
 .body__wrapper {
@@ -23,6 +26,7 @@
 
 .components__container {
   margin-top: 21px;
+  margin-bottom: 120px;
 }
 
 .textarea {
@@ -55,12 +59,14 @@
 
 @media (min-width: 767px) {
   .wrapper {
+    position: static;
     width: 501px;
     max-height: 100vh;
     overflow: auto;
     margin: 0 auto;
     border-radius: 8px;
     box-shadow: 14.095px 5.13px 9px 0px rgba(1, 1, 0, 0.08);
+    min-height: 50vh;
   }
 
   .body__wrapper {
@@ -74,5 +80,9 @@
     background-color: transparent;
     max-width: 282px;
     margin: 0 auto 51px;
+  }
+
+  .components__container {
+    margin-bottom: 0;
   }
 }

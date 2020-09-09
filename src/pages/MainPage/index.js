@@ -2,7 +2,7 @@ import React from 'react';
 import Media from 'react-media';
 import { Route, Switch, Redirect } from 'react-router-dom';
 import Header from '../../components/Header/Header';
-import OverviewPage from './OverviewPage/OverviewPage';
+import OverviewPage from './OverviewPage/OverviewPageContainer';
 import StatsPage from './StatsPage/StatsPage';
 import CurrencyPage from './CurrencyPage/CurrencyPage';
 
