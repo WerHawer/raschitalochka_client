@@ -54,9 +54,9 @@ const ActionInfo = () => {
       </div>
       {actions &&
         actions.map(({ id, date, type, category, comments, amount, balance }) => (
-          <div className={css.wrapper}>
+          <div key={id} className={css.wrapper}>
             <div className={css.backLine}></div>
-            <div key={id} className={css.infoWrapper}>
+            <div className={css.infoWrapper}>
               <InfoField name="Date" value={date} />
               <InfoField name="Type" value={type} />
               <InfoField name="Category" value={category} />
