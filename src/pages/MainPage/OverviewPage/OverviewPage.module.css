@@ -34,17 +34,29 @@
 }
 
 .addTransaction {
+  width: 100%;
   position: fixed;
-  display: flex;
-  justify-content: center;
   bottom: 0;
-  right: 50%;
-  transform: translateX(50%);
-  height: 68px;
+  left: 0;
+  /* transform: translateX(50%); */
+  /* height: 68px; */
+  padding: 15px 8px;
   border: none;
   font-size: 35px;
   background-color: var(--white-bg-color);
   z-index: 2;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 325px;
+  margin: 0 auto;
+}
+
+.buttonContainer > div {
+  max-width: 151px;
 }
 
 .currencyWidget {
@@ -74,12 +86,9 @@
   }
 
   .addTransaction {
-    margin: 0 auto;
-    position: relative;
+    position: static;
     transform: none;
     width: 100%;
-    right: 0;
-    height: 8.78vh;
     background-color: var(--primary-green);
   }
 

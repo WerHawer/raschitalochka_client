@@ -1,20 +1,21 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
 import Modal from 'components/Modal/ModalContainer';
-import AddModals from 'components/AddModals/AddModals';
 import Media from 'react-media';
 import HomePage from './pages/MainPage/';
 import LoginPage from 'pages/LoginPage/LoginPage';
 
 const App = ({ modal }) => {
   const isAuth = true;
+
+  useEffect(() => {
+    if (modal) document.body.style.overflow = 'hidden';
+
+    if (!modal) document.body.style.overflow = 'auto';
+  }, [modal]);
   return (
     <>
-      <Media query="(min-width: 768px)" render={() => <>{modal && <Modal />}</>} />
-      <Media
-        query="(max-width: 767px)"
-        render={() => <>{(modal === 'cost' || modal === 'income') && <AddModals variant={modal} />}</>}
-      />
+      {modal && <Modal />}
 
       <Switch>
         <Route path="/signin" component={LoginPage} />
