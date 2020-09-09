@@ -1,1 +1,1 @@
-export const getTestSelector = (state) => state.test;
+export const getModalSelector = (state) => state.modal;

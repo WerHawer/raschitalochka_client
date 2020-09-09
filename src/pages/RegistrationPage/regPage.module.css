@@ -1,0 +1,53 @@
+.registrationPage {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url(../../public/image/bg.png) bottom no-repeat;
+  background-size: contain;
+  width: 100vw;
+}
+.subtitle {
+  padding: 4vh;
+  font-size: 18px;
+  line-height: 45px;
+}
+.regDesktopTitle {
+  width: 45%;
+  color: #fff;
+  font-size: 35px;
+  margin-left: 5%;
+}
+@media screen and (min-width: 768px) {
+  .registrationPage {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: url(../../public/image/regTabletBg.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .regPageWrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+  .regLeftSide {
+    width: 50%;
+    background-image: url(../../public/image/regPage.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  .registrationPage {
+    width: 50%;
+    background: url(../../public/image/bgTurnOut.png) left bottom no-repeat,
+      url(../../public/image/bg.png) right bottom no-repeat;
+    background-size: 90%, 50%;
+    background-repeat: no-repeat, no-repeat;
+  }
+}
