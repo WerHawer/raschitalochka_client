@@ -5,13 +5,11 @@ import Header from '../../components/Header/Header';
 import OverviewPage from './OverviewPage/OverviewPageContainer';
 import StatsPage from './StatsPage/StatsPage';
 import CurrencyPage from './CurrencyPage/CurrencyPage';
-import NavLinkCustom from 'components/Nav-link/NavLinkCustom';
 
 const HomePage = () => {
   return (
     <div>
       <Header />
-      <NavLinkCustom to="/" children="text" />
       <Media
         queries={{
           small: '(max-width: 767px)',

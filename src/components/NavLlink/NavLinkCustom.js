@@ -2,13 +2,14 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import css from './NavLink.module.css';
 
-const NavLinkCustom = ({ to, children }) => {
+const NavLinkCustom = ({ to, children, text, exact }) => {
   return (
-    <li className={css.nav_item}>
-      <NavLink to={to} className={css.link} activeClassName={css.active_link}>
-        <div className={css.children_svg}>{children}</div>
+    <div className={css.nav_item}>
+      <NavLink exact={exact} to={to} className={css.link} activeClassName={css.active_link}>
+        <span className={css.children_svg}>{children}</span>
+        <span className={css.children_text}>{text}</span>
       </NavLink>
-    </li>
+    </div>
   );
 };
 
