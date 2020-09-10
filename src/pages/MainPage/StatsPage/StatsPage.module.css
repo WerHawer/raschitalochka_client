@@ -24,8 +24,9 @@
 }
 
 .diagramm {
-  background-color: #305174;
-  height: 45vh;
+  /* background-color: #305174; */
+  /* height: 45vh; */
+  height: 380px;
 }
 
 .transactionsTable {
