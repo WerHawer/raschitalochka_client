@@ -1,7 +1,7 @@
 import React from 'react';
 import NavBar from 'components/NavBar/NavBar';
 import Diagram from 'components/Diagram/Diagram';
-import Button from 'components/Button/Button';
+
 import Styles from './StatsPage.module.css';
 
 const StatsPage = () => (
@@ -12,7 +12,6 @@ const StatsPage = () => (
     <div className={Styles.diagrammAndTransactionsTable}>
       <div className={Styles.diagramm}>
         <Diagram />
-        <Button>Update Diagram</Button>
         {/* Place for diagramm */}
         {/* ///////// */}
       </div>
