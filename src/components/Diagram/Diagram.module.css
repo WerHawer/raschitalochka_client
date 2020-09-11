@@ -1,10 +1,19 @@
 .diagramContainer {
-  /* position: relative;
-  /* width: 100%;
-  height: auto; */
+  width: 100%;
   margin-bottom: 20px;
 }
 
 .label {
   font-size: 10px;
+}
+
+@media (min-width: 768px) {
+  .label {
+    font-size: 13px;
+  }
+
+  .updateButton {
+    width: 280px;
+    margin: 0 auto;
+  }
 }

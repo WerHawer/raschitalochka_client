@@ -1,7 +1,9 @@
 import React from 'react';
 import { PieChart, Pie, Sector, Cell, ResponsiveContainer } from 'recharts';
+import Media from 'react-media';
 import Button from 'components/Button/Button';
 import Style from './Diagram.module.css';
+import { queries } from '@testing-library/react';
 
 const data = [
   { name: 'Main Expenses', value: 8700 },
@@ -24,7 +26,6 @@ const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, per
 
   return (
     <text className={Style.label} fill="white" dominantBaseline="central" x={x} y={y} textAnchor={'middle'}>
-      {/* {`${(percent * 100).toFixed(0)}%`} */}
       {`${data[index].name}`}
     </text>
   );
@@ -32,26 +33,39 @@ const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, per
 
 const Diagram = () => (
   <>
-    <ResponsiveContainer className={Style.diagramContainer} height={'80%'}>
-      <PieChart>
-        <Pie
-          data={data}
-          cx={'50%'}
-          cy={'50%'}
-          labelLine={false}
-          label={renderCustomizedLabel}
-          outerRadius={'100%'}
-          fill="#8884d8"
-          startAngle={-49}
-          endAngle={311}
-        >
-          {data.map((entry, index) => (
-            <Cell fill={COLORS[index % COLORS.length]} />
-          ))}
-        </Pie>
-      </PieChart>
-    </ResponsiveContainer>
-    <Button>Update Diagram</Button>
+    <Media
+      queries={{
+        small: '(max-width: 767px)',
+        large: '(min-width: 768px)',
+      }}
+    >
+      {(matches) => (
+        <ResponsiveContainer className={Style.diagramContainer} height={'80%'}>
+          <PieChart>
+            <Pie
+              animationBegin={200}
+              animationDuration={1000}
+              data={data}
+              cx={'50%'}
+              cy={'50%'}
+              labelLine={false}
+              label={renderCustomizedLabel}
+              outerRadius={'100%'}
+              fill="#8884d8"
+              startAngle={-49}
+              endAngle={311}
+            >
+              {data.map((entry, index) => (
+                <Cell fill={COLORS[index % COLORS.length]} />
+              ))}
+            </Pie>
+          </PieChart>
+        </ResponsiveContainer>
+      )}
+    </Media>
+    <div className={Style.updateButton}>
+      <Button>Update Diagram</Button>
+    </div>
   </>
 );
 
