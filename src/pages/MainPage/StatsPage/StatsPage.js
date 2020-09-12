@@ -1,5 +1,6 @@
 import React from 'react';
-import NavBar from '../../../components/NavBar/NavBar';
+import NavBar from 'components/NavBar/NavBar';
+import Diagram from 'components/Diagram/Diagram';
 import Styles from './StatsPage.module.css';
 
 const StatsPage = () => (
@@ -7,10 +8,13 @@ const StatsPage = () => (
     <div className={Styles.navBar}>
       <NavBar balance={24000} />
     </div>
+
     <div className={Styles.diagrammAndTransactionsTable}>
-      <div className={Styles.diagramm}>
-        {/* Place for diagramm */}
-        {/* ///////// */}
+      <div className={Styles.titleBlock}>Cost Diagram</div>
+      <div className={Styles.diagramBlock}>
+        <div className={Styles.diagramm}>
+          <Diagram />
+        </div>
       </div>
       <div className={Styles.transactionsTable}>
         {/* Place for transaction table */}
