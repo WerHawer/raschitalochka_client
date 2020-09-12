@@ -1,8 +1,7 @@
 .pageWrapper {
   position: relative;
-  height: 86.1vh;
-  background: url(../../../public/image/bg.png) bottom no-repeat;
-  background-size: contain;
+  height: 90vh;
+  background: url(../../../public/image/bg.png) no-repeat;
   width: 100vw;
 }
 
@@ -15,4 +14,11 @@
   height: 33.45vh;
   background-color: #3a5374;
   border-radius: 5px;
+}
+
+@media screen and (max-width: 768px) {
+  .pageWrapper {
+    background-position: -60px 346px;
+    background-size: 130% 76%;
+  }
 }

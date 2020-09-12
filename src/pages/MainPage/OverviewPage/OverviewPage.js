@@ -6,6 +6,7 @@ import NavBar from 'components/NavBar/NavBar';
 import ActionInfo from 'components/ActionInfo/ActionInfo';
 import Button from 'components/Button/Button';
 import AddModals from 'components/AddModals/AddModals';
+import CurrencyStat from 'components/CurrencyStat/CurrencyStat';
 
 const OverviewPage = ({ addModal, modal }) => {
   const handleAddClick = (word) => {
@@ -35,7 +36,9 @@ const OverviewPage = ({ addModal, modal }) => {
         </div>
         <ActionInfo />
       </div>
-      <div className={Styles.currencyWidget}></div>
+      <div className={Styles.currencyWidget}>
+        <CurrencyStat />
+      </div>
     </div>
   );
 };
