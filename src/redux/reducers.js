@@ -6,6 +6,21 @@ const modal = createReducer('', {
   [actions.removeModal]: () => '',
 });
 
+const loader = createReducer(false, {
+  [actions.startLoader]: () => true,
+
+  [actions.stopLoader]: () => false,
+  [actions.logout]: () => false,
+});
+
+const localError = createReducer(null, {
+  [actions.addLocalError]: (state, { payload }) => payload,
+  [actions.removeLocalError]: () => null,
+  [actions.logout]: () => null,
+});
+
 export default combineReducers({
   modal,
+  loader,
+  localError,
 });

@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import { withFormik } from 'formik';
 import * as Yup from 'yup';
+
 import Input from 'components/Input/Input';
-import css from './RegForm.module.css';
 import ProgressBar from 'components/ProgressBar/ProgressBar';
 import Button from 'components/Button/Button';
 import Logo from 'components/LogoHeader/Logo';
+import Link from 'components/Link/LinkCustom';
+import css from './RegForm.module.css';
 
-const RegForm = ({ values, errors, touched, handleChange, handleBlur, handleSubmit, loader, localError }) => {
+const RegForm = ({ values, errors, touched, handleChange, handleBlur, handleSubmit, loader, localError, signUp }) => {
   const [serverErrorsArr, setServerErrorsArr] = useState([]);
 
   useEffect(() => {
@@ -55,20 +57,23 @@ const RegForm = ({ values, errors, touched, handleChange, handleBlur, handleSubm
       />
       <ProgressBar value={2} />
       <Input
-        value={values.name}
-        name="name"
+        value={values.username}
+        name="username"
         type="text"
         placeholder="Your Name"
         onChange={handleChange}
         onBlur={handleBlur}
-        error={errors.name}
-        touched={touched.name}
+        error={errors.username}
+        touched={touched.username}
       />
-      <div className={css.btn_container}>
-        <Button type="submit">Register</Button>
+      <div className={css.buttonContainer}>
+        <Button type="submit" shadow={false} isLoading={loader}>
+          Register
+        </Button>
       </div>
-      {/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!here are exist some link , below - example*/}
-      <a href="#">Login</a>
+
+      <Link to="/signin" name="Login" />
+
       {localError && (
         <>
           {serverErrorsArr.map((err) => (
@@ -85,11 +90,11 @@ export default withFormik({
     email: props.initialEmail || '',
     password: props.initialPassword || '',
     password_confirm: props.initialPassword || '',
-    name: props.initialPassword || '',
+    username: props.initialPassword || '',
   }),
 
   validationSchema: Yup.object().shape({
-    name: Yup.string().required('Name is required'),
+    username: Yup.string().required('Name is required'),
     email: Yup.string().email('Email not valid').required('Email is required'),
     password: Yup.string().required('Password is required'),
     password_confirm: Yup.string()
@@ -98,6 +103,8 @@ export default withFormik({
   }),
 
   handleSubmit: (values, { props }) => {
-    console.log(values, props);
+    const { email, password, username } = values;
+    const userData = { email, password, username };
+    props.signUp(userData);
   },
 })(RegForm);

@@ -13,8 +13,7 @@ const HomePage = () => {
       <Media
         queries={{
           small: '(max-width: 767px)',
-          medium: '(min-width: 768px) and (max-width: 1023px)',
-          large: '(min-width: 1024px)',
+          else: '(min-width: 768px)',
         }}
       >
         {(matches) => (
@@ -29,16 +28,7 @@ const HomePage = () => {
                 </Switch>
               </>
             )}
-            {matches.medium && (
-              <>
-                <Switch>
-                  <Route path="/" exact component={OverviewPage} />
-                  <Route path="/stats" component={StatsPage} />
-                  <Redirect to="/" />
-                </Switch>
-              </>
-            )}
-            {matches.large && (
+            {matches.else && (
               <>
                 <Switch>
                   <Route path="/" exact component={OverviewPage} />

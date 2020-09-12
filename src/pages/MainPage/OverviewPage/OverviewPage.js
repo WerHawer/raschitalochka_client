@@ -1,5 +1,4 @@
 import React from 'react';
-import Media from 'react-media';
 
 import Styles from './OverviewPage.module.css';
 import NavBar from 'components/NavBar/NavBar';
@@ -14,10 +13,6 @@ const OverviewPage = ({ addModal, modal }) => {
   };
   return (
     <div className={Styles.pageWrapper}>
-      {/* <Media
-        query="(max-width: 767px)"
-        render={() => <>{(modal === 'cost' || modal === 'income') && <AddModals variant={modal} />}</>}
-      /> */}
       <div className={Styles.navBar}>
         <NavBar balance={24000} />
       </div>

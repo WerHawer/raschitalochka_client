@@ -6,9 +6,10 @@ import Logo from 'components/LogoHeader/Logo';
 import { withFormik } from 'formik';
 import * as Yup from 'yup';
 import css from './login.module.css';
+import Link from 'components/Link/LinkCustom';
 
 const LoginForm = (props) => {
-  const { values, errors, touched, handleChange, handleBlur, handleSubmit, loader, localError } = props;
+  const { values, errors, touched, handleChange, handleBlur, handleSubmit, loader, localError, signIn } = props;
   const [serverErrorsArr, setServerErrorsArr] = useState([]);
 
   useEffect(() => {
@@ -45,7 +46,19 @@ const LoginForm = (props) => {
         error={errors.password}
         touched={touched.password}
       />
-      <Button type="submit">Enter</Button>{' '}
+
+      {localError && (
+        <>
+          {serverErrorsArr.map((err) => (
+            <span className="error">{localError[err]}</span>
+          ))}
+        </>
+      )}
+
+      <Button type="submit" shadow={false} isLoading={loader}>
+        Enter
+      </Button>
+
       {localError && (
         <>
           {serverErrorsArr.map((err) => (
@@ -53,8 +66,8 @@ const LoginForm = (props) => {
           ))}
         </>
       )}
-      {/* !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!here are exist some link , below - example*/}
-      <a href="#">Register</a>
+
+      <Link to="/signup" name="Register" />
     </form>
   );
 };
@@ -71,6 +84,6 @@ export default withFormik({
   }),
 
   handleSubmit: (values, { props }) => {
-    console.log(values, props);
+    props.signIn(values);
   },
 })(LoginForm);

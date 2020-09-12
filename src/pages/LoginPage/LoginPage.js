@@ -1,6 +1,6 @@
 import React from 'react';
 import Media from 'react-media';
-import LoginForm from 'components/LoginForm/LoginForm';
+import LoginForm from 'components/LoginForm/LoginFormContainer';
 import css from './loginPage.module.css';
 
 const LoginPage = () => (

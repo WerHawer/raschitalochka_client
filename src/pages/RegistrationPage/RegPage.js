@@ -1,14 +1,14 @@
 import React from 'react';
 import Media from 'react-media';
-import RegForm from 'components/RegForm/RegForm';
+import RegForm from 'components/RegForm/RegFormContainer';
 import css from './regPage.module.css';
 
 const RegistrationPage = () => (
   <div className={css.regPageWrapper}>
     <Media
       queries={{
-        small: '(max-width: 767px)',
-        medium: '(min-width: 768px) and (max-width: 1023px)',
+        small: '(max-width: 1023px)',
+
         large: '(min-width: 1024px)',
       }}
     >
@@ -19,11 +19,7 @@ const RegistrationPage = () => (
               <RegForm />
             </div>
           )}
-          {matches.medium && (
-            <div className={css.registrationPage}>
-              <RegForm />
-            </div>
-          )}
+
           {matches.large && (
             <>
               <div className={css.regLeftSide}>

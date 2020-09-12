@@ -11,7 +11,8 @@
 .balanceBar,
 .transactionsList,
 .addTransaction {
-  width: 306px;
+  width: 80%;
+  min-width: 306px;
   margin: 0 auto;
 }
 
