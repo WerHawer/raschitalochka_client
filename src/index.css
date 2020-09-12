@@ -1,5 +1,6 @@
 @import './fonts/font.css';
 @import './reset.css';
+@import './animations/apearAnimation.css';
 :root {
   --main-bg-color: #eef0f4;
   --secondary-bg-color: #f3f6f6;
@@ -54,5 +55,14 @@ body {
   width: 75%;
 }
 .progress4 {
+  width: 100%;
+}
+
+.switch-wrapper {
+  position: relative;
+}
+
+.switch-wrapper > div {
+  position: absolute;
   width: 100%;
 }
