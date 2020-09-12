@@ -38,8 +38,6 @@
   position: fixed;
   bottom: 0;
   left: 0;
-  /* transform: translateX(50%); */
-  /* height: 68px; */
   padding: 15px 8px;
   border: none;
   font-size: 35px;
@@ -109,7 +107,8 @@
   .pageWrapper {
     background: none;
     margin: 0 auto;
-    width: 1024px;
+    min-width: 1024px;
+    width: 85%;
     padding: 0 5px;
     padding-top: 4.6vh;
     padding-bottom: 5.1vh;
@@ -152,7 +151,6 @@
   }
 
   .transactionsList {
-    height: auto;
     width: 100%;
     justify-self: stretch;
     border-radius: 5px;
