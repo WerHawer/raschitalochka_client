@@ -1,6 +1,8 @@
 import React from 'react';
 import Media from 'react-media';
-import { Route, Switch, Redirect } from 'react-router-dom';
+import { Route, Redirect } from 'react-router-dom';
+import { AnimatedSwitch } from 'react-router-transition';
+import { mapStyles, bounceTransition } from 'libs/routesAnimationsSettings';
 import Header from '../../components/Header/Header';
 import OverviewPage from './OverviewPage/OverviewPageContainer';
 import StatsPage from './StatsPage/StatsPage';
@@ -21,30 +23,48 @@ const HomePage = () => {
           <>
             {matches.small && (
               <>
-                <Switch>
+                <AnimatedSwitch
+                  atEnter={bounceTransition.atEnter}
+                  atLeave={bounceTransition.atLeave}
+                  atActive={bounceTransition.atActive}
+                  mapStyles={mapStyles}
+                  className="switch-wrapper"
+                >
                   <Route path="/" exact component={OverviewPage} />
                   <Route path="/stats" component={StatsPage} />
                   <Route path="/currency" component={CurrencyPage} />
                   <Redirect to="/" />
-                </Switch>
+                </AnimatedSwitch>
               </>
             )}
             {matches.medium && (
               <>
-                <Switch>
+                <AnimatedSwitch
+                  atEnter={bounceTransition.atEnter}
+                  atLeave={bounceTransition.atLeave}
+                  atActive={bounceTransition.atActive}
+                  mapStyles={mapStyles}
+                  className="switch-wrapper"
+                >
                   <Route path="/" exact component={OverviewPage} />
                   <Route path="/stats" component={StatsPage} />
                   <Redirect to="/" />
-                </Switch>
+                </AnimatedSwitch>
               </>
             )}
             {matches.large && (
               <>
-                <Switch>
+                <AnimatedSwitch
+                  atEnter={bounceTransition.atEnter}
+                  atLeave={bounceTransition.atLeave}
+                  atActive={bounceTransition.atActive}
+                  mapStyles={mapStyles}
+                  className="switch-wrapper"
+                >
                   <Route path="/" exact component={OverviewPage} />
                   <Route path="/stats" component={StatsPage} />
                   <Redirect to="/" />
-                </Switch>
+                </AnimatedSwitch>
               </>
             )}
           </>
