@@ -1,29 +1,31 @@
-import React from "react";
-import css from "./radio.module.css";
+import React from 'react';
+import css from './radio.module.css';
 
-const Radio = ({ elements, name }) => {
+const Radio = ({ elements, name, onChange, formikValue, variant }) => {
   return (
-    <form className={css.form}>
-      <p className={css.title}>{name}</p>
-      <ul className={css.list}>
-        {elements.map((el) => {
-          return (
-            <li key={el.id}>
-              <input
-                type="radio"
-                id={el.id}
-                name={name}
-                value={el.value}
-                className={css.input}
-              />
-              <label for={el.id} className={css.label}>
-                {el.value}
-              </label>
-            </li>
-          );
-        })}
-      </ul>
-    </form>
+    <ul className={css.list}>
+      {elements.map(({ id, value }) => {
+        console.log(value === formikValue);
+
+        return (
+          <li key={id} className={css.li}>
+            <input
+              type="radio"
+              id={id}
+              name={name}
+              value={value}
+              className={`${css.input} ${css[variant]}`}
+              checked={value === formikValue}
+              onChange={onChange}
+            />
+
+            <label htmlFor={id} className={css.label}>
+              {value}
+            </label>
+          </li>
+        );
+      })}
+    </ul>
   );
 };
 export default Radio;

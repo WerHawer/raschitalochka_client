@@ -1,0 +1,24 @@
+.pageWrapper {
+  position: relative;
+  height: 90vh;
+  background: url(../../../public/image/bg.png) no-repeat;
+  width: 100vw;
+}
+
+.navBar {
+  height: 7.21vh;
+  margin-bottom: 3.52vh;
+}
+
+.currencyWidget {
+  height: 33.45vh;
+  background-color: #3a5374;
+  border-radius: 5px;
+}
+
+@media screen and (max-width: 768px) {
+  .pageWrapper {
+    background-position: -60px 346px;
+    background-size: 130% 76%;
+  }
+}

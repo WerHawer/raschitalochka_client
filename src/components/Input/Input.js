@@ -1,26 +1,28 @@
-import React from "react";
-import css from "./Input.module.css";
+import React from 'react';
+import css from './Input.module.css';
 
 const Input = ({
-  value,
+  value = '',
   onChange = () => null,
-  name,
   onBlur = () => null,
-  placeholder = "Placeholder",
-  type = "text",
+  name,
+  placeholder = 'Placeholder',
+  type = 'text',
   error,
   touched,
   customClass,
   serverError,
+  variant,
 }) => {
   const inputNameBgr = `input__${name}`;
-  const errorStyle =
-    (error && touched) || (serverError && touched) ? css.error : undefined;
+  const errorStyle = (error && touched) || (serverError && touched) ? css.error : undefined;
+
+  const inputWithVariant = `inputVariant__${variant}`;
 
   return (
     <div className="inputWrapper">
       <input
-        className={`${customClass} ${css.input} ${css[inputNameBgr]} ${errorStyle}`}
+        className={`${customClass} ${css.input} ${css[inputNameBgr]} ${errorStyle}  ${css[inputWithVariant]}`}
         name={name}
         type={type}
         value={value}
@@ -28,13 +30,9 @@ const Input = ({
         onChange={onChange}
         placeholder={placeholder}
       />
-      {touched && error && (
-        <span className={`${css.error} ${css.errorText}`}>{error}</span>
-      )}
+      {touched && error && <span className={`${css.error} ${css.errorText}`}>{error}</span>}
 
-      {serverError && (
-        <span className={`${css.error} ${css.errorText}`}>{serverError}</span>
-      )}
+      {serverError && <span className={`${css.error} ${css.errorText}`}>{serverError}</span>}
     </div>
   );
 };
