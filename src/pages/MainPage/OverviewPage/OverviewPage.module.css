@@ -59,6 +59,8 @@
 
 .currencyWidget {
   display: none;
+  border-radius: 5px;
+  box-shadow: 10px 10px 26px -13px rgba(0, 0, 0, 0.75);
 }
 
 @media screen and (min-width: 768px) {
@@ -94,10 +96,10 @@
     position: fixed;
     display: block;
     width: 352px;
-    height: 170px;
+    height: auto;
     background-color: #3a5374;
     left: 33px;
-    bottom: 52px;
+    bottom: 10px;
   }
 }
 

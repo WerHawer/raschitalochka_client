@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import NavLinkCustom from 'components/NavLlink/NavLinkCustom';
 import { ReactComponent as HomeIcon } from 'public/icons/home.svg';
-import { ReactComponent as Diagrams } from 'public/icons/diagrams.svg';
+import { ReactComponent as Diagrams } from 'public/icons/Diagrams.svg';
 import { ReactComponent as Currency } from 'public/icons/currency.svg';
 import Styles from './NavBar.module.css';
 

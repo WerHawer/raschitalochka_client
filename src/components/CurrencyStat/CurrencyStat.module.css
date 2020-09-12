@@ -1,0 +1,36 @@
+.currency {
+  height: 100%;
+  background-image: none;
+  border-radius: inherit;
+  background-color: var(--secondary-font-color) !important;
+}
+
+.currencyHeader {
+  background-color: var(--secondary-bg-color);
+  display: flex;
+  justify-content: space-around;
+  border-radius: inherit;
+}
+
+.currencyTitle {
+  padding: 12px 0;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.2;
+  color: var(--accent-font-color);
+}
+
+.currencyStat {
+  display: flex;
+  flex-direction: column;
+}
+.currencyList {
+  display: flex;
+  padding: 17px 0;
+  border-bottom: 3px solid var(--secondary-bg-color);
+}
+@media screen and (min-width: 1024px) {
+  .currency {
+    background: url(../../public/image/bg.png) bottom no-repeat;
+  }
+}

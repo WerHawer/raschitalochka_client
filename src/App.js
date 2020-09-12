@@ -4,6 +4,8 @@ import Modal from 'components/Modal/ModalContainer';
 import Media from 'react-media';
 import HomePage from './pages/MainPage/';
 import LoginPage from 'pages/LoginPage/LoginPage';
+import Select from './components/Select/Select';
+
 
 const App = ({ modal }) => {
   const isAuth = true;
@@ -15,6 +17,7 @@ const App = ({ modal }) => {
   }, [modal]);
   return (
     <>
+
       {modal && <Modal />}
 
       <Switch>
@@ -22,6 +25,7 @@ const App = ({ modal }) => {
         {isAuth && <Route path="/" component={HomePage} />}
         <Redirect to="/signin" />
       </Switch>
+
     </>
   );
 };
