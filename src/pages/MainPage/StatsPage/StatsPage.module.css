@@ -112,7 +112,8 @@
   .pageWrapper {
     background: none;
     margin: 0 auto;
-    width: 1024px;
+    min-width: 1024px;
+    width: 85%;
     padding: 0 5px;
     padding-top: 4.6vh;
     padding-bottom: 5.1vh;
@@ -132,7 +133,7 @@
   }
 
   .transactionsTable,
-  .diagramm {
+  .diagramBlock {
     width: 100%;
   }
 
@@ -185,5 +186,6 @@
     justify-self: stretch;
     grid-area: 1 / 2 / 6 / 5;
     padding-top: 75px;
+    box-shadow: 0px 16px 16px -5px rgba(0, 0, 0, 0.75);
   }
 }
