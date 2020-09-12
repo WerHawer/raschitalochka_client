@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useMemo } from 'react';
+import React, { useEffect, useState } from 'react';
 import css from './CurrencyStat.module.css';
 import Currency from '../Currency/Currency';
 import API from '../../api/agent';
@@ -7,7 +7,7 @@ const CurrencyStat = () => {
   useEffect(() => {
     (async function fetchData() {
       const request = await API.Currency.stats();
-      const filteredCurrency = filterOutCurrency(request.data, 'BTC');
+      const filteredCurrency = filterOutCurrency(request, 'BTC');
       setData(filteredCurrency);
     })();
   }, []);
