@@ -1,0 +1,15 @@
+.rut {
+  display: flex;
+  justify-content: space-between;
+  width: 370px;
+  height: 40px;
+  margin: 50px;
+}
+
+.months {
+  width: 176px;
+}
+
+.years {
+  width: 176px;
+}
