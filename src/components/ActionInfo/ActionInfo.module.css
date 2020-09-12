@@ -29,8 +29,8 @@
   background-color: var(--secondary-bg-color);
 }
 
-/* MEDIA 767 */
-@media (min-width: 767px) {
+/* MEDIA 768 */
+@media (min-width: 768px) {
   .mainWrapper > .wrapper:nth-child(odd) {
     background-color: var(--secondary-bg-color);
   }

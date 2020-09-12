@@ -27,7 +27,7 @@
   padding-left: 10px;
 }
 
-@media (min-width: 767px) {
+@media (min-width: 768px) {
   .wrapper {
     background-color: var(--grey-bg-color);
   }
