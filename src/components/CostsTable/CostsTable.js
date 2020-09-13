@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Select from 'components/Select/Select';
 import Styles from './CostsTable.module.css';
 
@@ -36,6 +37,17 @@ const CostsTable = ({ costs = exampleData }) => {
       </div>
     </>
   );
+};
+
+CostsTable.propTypes = {
+  data: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number,
+      name: PropTypes.string,
+      value: PropTypes.number,
+      color: PropTypes.string,
+    })
+  ),
 };
 
 export default CostsTable;

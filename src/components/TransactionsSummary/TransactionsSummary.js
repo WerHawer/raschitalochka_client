@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Styles from './TransactionsSummary.module.css';
 
 const exampleData = {
@@ -18,5 +19,10 @@ const TransactionsSummary = ({ income = exampleData.income, costs = exampleData.
     </div>
   </div>
 );
+
+TransactionsSummary.propTypes = {
+  income: PropTypes.number,
+  costs: PropTypes.number,
+};
 
 export default TransactionsSummary;

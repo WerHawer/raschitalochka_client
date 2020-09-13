@@ -69,6 +69,7 @@ Diagram.propTypes = {
       id: PropTypes.number,
       name: PropTypes.string,
       value: PropTypes.number,
+      color: PropTypes.string,
     })
   ),
 };
