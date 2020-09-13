@@ -1,0 +1,57 @@
+.select {
+  width: 280px;
+  margin: 0 auto;
+  margin-bottom: 17px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.table {
+  width: 100%;
+}
+
+.tableHeader {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 16px 24px;
+  background-color: var(--secondary-bg-color);
+}
+
+.tableHeaderItem {
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.tableBody {
+  width: 100%;
+}
+
+.tableItem {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px 24px;
+  border-bottom: 1px solid var(--secondary-bg-color);
+  font-weight: 500;
+  font-size: 13px;
+  color: var(--primary-font-color);
+}
+
+@media (min-width: 768px) {
+  .select {
+    width: 364px;
+  }
+
+  .tableHeader {
+    display: none;
+  }
+}
+
+@media (min-width: 1024px) {
+  .tableHeader {
+    display: flex;
+  }
+  .select {
+    width: 100%;
+  }
+}

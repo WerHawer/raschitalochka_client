@@ -5,17 +5,16 @@ import Button from 'components/Button/Button';
 import Style from './Diagram.module.css';
 
 const exampleData = [
-  { id: 1, name: 'Main Expenses', value: 8700 },
-  { id: 2, name: 'Food', value: 3800 },
-  { id: 3, name: 'Car', value: 1500 },
-  { id: 4, name: 'Self Care', value: 800 },
-  { id: 5, name: 'Child Care', value: 2208 },
-  { id: 6, name: 'House', value: 300 },
-  { id: 7, name: 'Education', value: 3400 },
-  { id: 8, name: 'Entertainment', value: 1230 },
-  { id: 9, name: 'Other Expenses', value: 610 },
+  { id: 1, name: 'Main Expenses', value: 8700, color: '#ecb22a' },
+  { id: 2, name: 'Food', value: 3800, color: '#e28b20' },
+  { id: 3, name: 'Car', value: 1500, color: '#d25925' },
+  { id: 4, name: 'Self Care', value: 800, color: '#67b7d0' },
+  { id: 5, name: 'Child Care', value: 2208, color: '#5593d7' },
+  { id: 6, name: 'House', value: 300, color: '#3e6ba8' },
+  { id: 7, name: 'Education', value: 3400, color: '#9cc254' },
+  { id: 8, name: 'Entertainment', value: 1230, color: '#73ad57' },
+  { id: 9, name: 'Other Expenses', value: 610, color: '#507c3a' },
 ];
-const COLORS = ['#ecb22a', '#e28b20', '#d25925', '#67b7d0', '#5593d7', '#3e6ba8', '#9cc254', '#73ad57', '#507c3a'];
 
 const RADIAN = Math.PI / 180;
 
@@ -51,7 +50,7 @@ const Diagram = ({ data = exampleData }) => {
             endAngle={311}
           >
             {data.map((entry, index) => (
-              <Cell key={entry.id} fill={COLORS[index % COLORS.length]} />
+              <Cell key={entry.id} fill={entry.color} />
             ))}
           </Pie>
         </PieChart>
@@ -70,6 +69,7 @@ Diagram.propTypes = {
       id: PropTypes.number,
       name: PropTypes.string,
       value: PropTypes.number,
+      color: PropTypes.string,
     })
   ),
 };

@@ -1,6 +1,8 @@
 import React from 'react';
 import NavBar from 'components/NavBar/NavBar';
 import Diagram from 'components/Diagram/Diagram';
+import CostsTable from 'components/CostsTable/CostsTable';
+import TransactionsSummary from 'components/TransactionsSummary/TransactionsSummary';
 import Styles from './StatsPage.module.css';
 
 const StatsPage = () => (
@@ -17,8 +19,10 @@ const StatsPage = () => (
         </div>
       </div>
       <div className={Styles.transactionsTable}>
-        {/* Place for transaction table */}
-        {/* ///////// */}
+        <CostsTable />
+        <div className={Styles.transactionsSummary}>
+          <TransactionsSummary />
+        </div>
       </div>
     </div>
 
@@ -27,10 +31,6 @@ const StatsPage = () => (
       {/* ////// */}
     </div>
 
-    <div className={Styles.transactionsSummary}>
-      {/* Place for transaction summary */}
-      {/* ///////// */}
-    </div>
     <div className={Styles.currencyWidget}></div>
   </div>
 );
