@@ -1,6 +1,5 @@
 .pageWrapper {
   position: relative;
-  height: 100%;
 }
 
 .navBar {
@@ -8,11 +7,10 @@
   margin-bottom: 3.52vh;
 }
 
-.datePicker,
+.transactionsSummary,
 .transactionsTable,
-.transactionsSummary {
+.diagramBlock {
   margin: 0 auto;
-  width: 280px;
 }
 
 .diagrammAndTransactionsTable {
@@ -22,31 +20,23 @@
 
 .diagramBlock {
   position: relative;
-  margin: 0 auto;
   width: 280px;
 }
 
 .diagramm {
   width: 100%;
-  height: 380px;
+  height: 315px;
+  margin-bottom: 40px;
 }
 
 .transactionsTable {
-  background-color: #3a5374;
-  height: 45vh;
-}
-
-.transactionsSummary:before {
-  content: '';
-  display: block;
+  margin: 0 auto;
   width: 100%;
-  height: 2px;
-  background-color: #777777;
 }
 
 .transactionsSummary {
-  height: 8.8vh;
-  background-color: #a8a8a8;
+  width: 100%;
+  border-top: 2px solid var(--placeholder-input-color);
 }
 
 .currencyWidget {
@@ -125,7 +115,7 @@
   }
 
   .transactionsSummary {
-    display: none;
+    width: 100%;
   }
 
   .navBar {
@@ -135,6 +125,12 @@
   .transactionsTable,
   .diagramBlock {
     width: 100%;
+    margin: 0;
+  }
+
+  .transactionsTable {
+    padding-top: 9.47vh;
+    max-width: 475px;
   }
 
   .diagramBlock {
@@ -143,6 +139,7 @@
     justify-content: center;
     align-content: center;
     box-shadow: none;
+    max-width: 587px;
   }
 
   .navBar {
@@ -183,9 +180,12 @@
     display: flex;
     position: relative;
     flex-direction: row;
+    justify-content: center;
     justify-self: stretch;
     grid-area: 1 / 2 / 6 / 5;
     padding-top: 75px;
+    padding-right: 24px;
+    padding-left: 24px;
     box-shadow: 0px 16px 16px -5px rgba(0, 0, 0, 0.75);
   }
 }

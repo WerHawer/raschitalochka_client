@@ -18,11 +18,11 @@ const SelectCustom = () => {
 
   return (
     <div className={css.rut}>
-      <span className={css.years}>
-        <Select options={optionsYear} placeholder="Year"  />
-      </span>
       <span className={css.months}>
-        <Select options={optionsMonth} placeholder="Month"  />
+        <Select options={optionsMonth} placeholder="Month" />
+      </span>
+      <span className={css.years}>
+        <Select options={optionsYear} placeholder="Year" />
       </span>
     </div>
   );
