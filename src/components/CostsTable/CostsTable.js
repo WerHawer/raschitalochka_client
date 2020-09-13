@@ -19,7 +19,8 @@ const CostsTable = ({ costs = exampleData }) => {
   return (
     <>
       <div className={Styles.select}>
-        <Select />
+        <Select name={'Month'} />
+        <Select name={'Year'} />
       </div>
       <div className={Styles.table}>
         <div className={Styles.tableHeader}>

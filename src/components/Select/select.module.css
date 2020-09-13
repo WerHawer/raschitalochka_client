@@ -1,18 +1,21 @@
 .rut {
   display: flex;
   justify-content: space-between;
-  width: 100%;
+  width: 90%;
   height: 40px;
 }
 
-.months,
-.years {
-  width: 45%;
+.select {
+  width: 90%;
+  margin: 0 auto;
 }
 
-@media (min-width: 768px) {
-  .months,
-  .years {
-    width: 49%;
+@media (min-width: 1024px) {
+  .rut {
+    width: 100%;
+  }
+
+  .select {
+    width: 100%;
   }
 }

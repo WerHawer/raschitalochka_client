@@ -2,6 +2,8 @@
   width: 280px;
   margin: 0 auto;
   margin-bottom: 17px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .table {
@@ -48,5 +50,8 @@
 @media (min-width: 1024px) {
   .tableHeader {
     display: flex;
+  }
+  .select {
+    width: 100%;
   }
 }
