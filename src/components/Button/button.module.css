@@ -3,15 +3,16 @@
   user-select: none;
   border: 0;
   border-radius: 3px;
-  padding: 8px 40px;
-  outline: none;
-  background-color: var(--good-font-color);
-  color: var(--white-bg-color);
+  padding: 14px 0;
+  outline: none; /* убирать контур в Mozilla */
+  background-color: #5a895a;
+  color: #fff;
   opacity: 1;
+  width: 100%;
+  font-weight: 700;
 }
 
 .wrapper {
-  margin: 10px;
   width: 100%;
 }
 
@@ -21,10 +22,11 @@
 }
 
 .button_disabled {
+  width: 100%;
   text-decoration: none;
   border: 0;
   border-radius: 3px;
-  padding: 8px 40px;
+  padding: 14px 0;
   color: #fff;
   background-color: #cccaca;
 }
@@ -46,6 +48,12 @@
 
 .button_svg {
   fill: #669668;
+}
+
+@media (min-width: 768px) {
+  .wrapper {
+    box-shadow: 3px 3px 5px 0px rgba(61, 61, 61, 0.75);
+  }
 }
 
 @media (max-width: 767px) {

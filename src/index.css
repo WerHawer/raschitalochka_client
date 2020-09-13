@@ -1,5 +1,6 @@
 @import './fonts/font.css';
 @import './reset.css';
+@import './animations/apearAnimation.css';
 :root {
   --main-bg-color: #eef0f4;
   --secondary-bg-color: #f3f6f6;
@@ -7,9 +8,10 @@
   --main-mobile-bg-color: #3f5544;
   --white-bg-color: #ffffff;
   --input-bg-color: #f9fbfb;
+  --green-bg-color: #516d57;
 
   --primary-font-color: #2c353e;
-  --secondary-font-colo: #ffffff;
+  --secondary-font-color: #ffffff;
   --third-font-color: #6b7d83;
   --main-green-font: #618d63;
   --accent-font-color: #282828;
@@ -53,5 +55,14 @@ body {
   width: 75%;
 }
 .progress4 {
+  width: 100%;
+}
+
+.switch-wrapper {
+  position: relative;
+}
+
+.switch-wrapper > div {
+  position: absolute;
   width: 100%;
 }

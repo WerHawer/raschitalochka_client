@@ -1,0 +1,88 @@
+.wrapper {
+  width: 100%;
+  background-color: #fff;
+  min-height: 100vh;
+  overflow: scroll;
+}
+
+.body__wrapper {
+  padding: 0 19px;
+  margin-top: 21px;
+}
+
+.inputs__container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 19px;
+}
+
+.inputs__container > div {
+  width: 47%;
+}
+
+.inputs__container > :global(.react-datepicker__tab-loop) {
+  width: 0;
+}
+
+.components__container {
+  margin-top: 21px;
+  margin-bottom: 120px;
+}
+
+.textarea {
+  width: 100%;
+  padding: 12px;
+  border: 2px solid var(--placeholder-input-color);
+  border-radius: 8px;
+  resize: none;
+
+  color: var(--accent-font-color);
+  font-family: 'HelveticaNeueCyr-Roman', Helvetica, Arial, sans-serif;
+  font-size: 13px;
+}
+
+.h2 {
+  font-family: 'Helvetica', Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+
+.button__container {
+  width: 100%;
+  padding: 12px 15px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  background-color: var(--secondary-bg-color);
+}
+
+@media (min-width: 767px) {
+  .wrapper {
+    position: static;
+    width: 501px;
+    max-height: 100vh;
+    overflow: auto;
+    margin: 0 auto;
+    border-radius: 8px;
+    box-shadow: 14.095px 5.13px 9px 0px rgba(1, 1, 0, 0.08);
+    min-height: 50vh;
+  }
+
+  .body__wrapper {
+    max-width: 282px;
+    padding: 0;
+    margin: 23px auto;
+  }
+
+  .button__container {
+    position: static;
+    background-color: transparent;
+    max-width: 282px;
+    margin: 0 auto 51px;
+  }
+
+  .components__container {
+    margin-bottom: 0;
+  }
+}
