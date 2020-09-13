@@ -7,7 +7,9 @@ const App = () => {
 
   return (
     <>
-      <Select />
+      <Select name={'years'} />
+      <Select name={'month'} />
+
       <h1>App</h1>
     </>
   );
