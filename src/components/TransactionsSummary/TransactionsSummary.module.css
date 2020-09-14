@@ -1,0 +1,38 @@
+.wrapper {
+  padding-top: 17px;
+  padding-bottom: 41px;
+  padding-right: 21px;
+  padding-left: 21px;
+}
+
+.categoriesWrapper {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 700;
+}
+
+.categoriesWrapper:first-child {
+  margin-bottom: 10px;
+}
+
+.amountCosts {
+  color: var(--alarm-color);
+}
+
+.amountIncome {
+  color: var(--active-link-bg-color);
+}
+
+@media (min-width: 767px) {
+  .categoriesWrapper {
+    width: 30%;
+    margin-left: auto;
+  }
+}
+
+@media (min-width: 1024px) {
+  .categoriesWrapper {
+    width: 100%;
+    margin-left: none;
+  }
+}
