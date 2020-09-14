@@ -36,26 +36,7 @@ const HomePage = () => {
                 </AnimatedSwitch>
               </>
             )}
-<<<<<<< HEAD
             {matches.else && (
-=======
-            {matches.medium && (
-              <>
-                <AnimatedSwitch
-                  atEnter={bounceTransition.atEnter}
-                  atLeave={bounceTransition.atLeave}
-                  atActive={bounceTransition.atActive}
-                  mapStyles={mapStyles}
-                  className="switch-wrapper"
-                >
-                  <Route path="/" exact component={OverviewPage} />
-                  <Route path="/stats" component={StatsPage} />
-                  <Redirect to="/" />
-                </AnimatedSwitch>
-              </>
-            )}
-            {matches.large && (
->>>>>>> ef5fe82c8489f096a1cec32cc93770c36e5803b0
               <>
                 <AnimatedSwitch
                   atEnter={bounceTransition.atEnter}
