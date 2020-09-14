@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-axios.defaults.baseURL = 'https://project-test-goit.herokuapp.com/';
+axios.defaults.baseURL = 'https://back-raschitalochka.herokuapp.com/';
 axios.defaults.withCredentials = true;
 const PRIVAT_API = 'https://api.privatbank.ua/p24api/pubinfo?json&exchange&coursid=5';
 
