@@ -41,7 +41,8 @@
 
 .currencyWidget {
   display: none;
-  background-color: #3a5374;
+  border-radius: 5px;
+  box-shadow: 10px 10px 26px -13px rgba(0, 0, 0, 0.75);
 }
 
 .titleBlock {

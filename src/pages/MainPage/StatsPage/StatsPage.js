@@ -3,6 +3,7 @@ import NavBar from 'components/NavBar/NavBar';
 import Diagram from 'components/Diagram/Diagram';
 import CostsTable from 'components/CostsTable/CostsTable';
 import TransactionsSummary from 'components/TransactionsSummary/TransactionsSummary';
+import CurrencyStat from 'components/CurrencyStat/CurrencyStat';
 import Styles from './StatsPage.module.css';
 
 const StatsPage = () => (
@@ -31,7 +32,9 @@ const StatsPage = () => (
       {/* ////// */}
     </div>
 
-    <div className={Styles.currencyWidget}></div>
+    <div className={Styles.currencyWidget}>
+      <CurrencyStat />
+    </div>
   </div>
 );
 

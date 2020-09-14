@@ -18,10 +18,10 @@ const App = ({ modal }) => {
   }, [modal]);
   return (
     <>
-      <CSSTransition mountOnEnter unmountOnExit in={modal} timeout={300} classNames="modal">
+      <CSSTransition mountOnEnter unmountOnExit in={!!modal} timeout={300} classNames="modal">
         <Modal />
       </CSSTransition>
-    
+
       <AnimatedSwitch
         atEnter={bounceTransition.atEnter}
         atLeave={bounceTransition.atLeave}
