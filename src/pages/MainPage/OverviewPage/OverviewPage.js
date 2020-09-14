@@ -1,6 +1,5 @@
 import React from 'react';
 import Media from 'react-media';
-
 import Styles from './OverviewPage.module.css';
 import NavBar from 'components/NavBar/NavBar';
 import ActionInfo from 'components/ActionInfo/ActionInfo';
