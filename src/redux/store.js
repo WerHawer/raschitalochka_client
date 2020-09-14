@@ -1,13 +1,13 @@
-import { configureStore, getDefaultMiddleware } from "@reduxjs/toolkit";
-import storage from "redux-persist/lib/storage";
-import { persistStore, persistReducer } from "redux-persist";
-import rootReducer from "./reducers";
-import logger from "redux-logger";
+import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit';
+import storage from 'redux-persist/lib/storage';
+import { persistStore, persistReducer } from 'redux-persist';
+import rootReducer from './reducers';
+import logger from 'redux-logger';
 
 const persistConfig = {
-  key: "raschitalochka",
+  key: 'raschitalochka',
   storage,
-  whitelist: ["test"],
+  whitelist: ['user'],
 };
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

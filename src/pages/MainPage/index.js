@@ -1,12 +1,13 @@
 import React from 'react';
 import Media from 'react-media';
-import { Route, Redirect } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 import { AnimatedSwitch } from 'react-router-transition';
 import { mapStyles, bounceTransition } from 'libs/routesAnimationsSettings';
-import Header from '../../components/Header/Header';
+import Header from '../../components/Header/HeaderContainer';
 import OverviewPage from './OverviewPage/OverviewPageContainer';
 import StatsPage from './StatsPage/StatsPage';
 import CurrencyPage from './CurrencyPage/CurrencyPage';
+import PrivatRoute from 'components/PrivatRoute/PrivatRoute';
 
 const HomePage = () => {
   return (
@@ -29,9 +30,9 @@ const HomePage = () => {
                   mapStyles={mapStyles}
                   className="switch-wrapper"
                 >
-                  <Route path="/" exact component={OverviewPage} />
-                  <Route path="/stats" component={StatsPage} />
-                  <Route path="/currency" component={CurrencyPage} />
+                  <PrivatRoute path="/" exact component={OverviewPage} />
+                  <PrivatRoute path="/stats" component={StatsPage} />
+                  <PrivatRoute path="/currency" component={CurrencyPage} />
                   <Redirect to="/" />
                 </AnimatedSwitch>
               </>
@@ -45,8 +46,9 @@ const HomePage = () => {
                   mapStyles={mapStyles}
                   className="switch-wrapper"
                 >
-                  <Route path="/" exact component={OverviewPage} />
-                  <Route path="/stats" component={StatsPage} />
+                  <PrivatRoute path="/" exact component={OverviewPage} />
+                  <PrivatRoute path="/stats" component={StatsPage} />
+
                   <Redirect to="/" />
                 </AnimatedSwitch>
               </>

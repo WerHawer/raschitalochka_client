@@ -9,7 +9,7 @@ import Logo from 'components/LogoHeader/Logo';
 import Link from 'components/Link/LinkCustom';
 import css from './RegForm.module.css';
 
-const RegForm = ({ values, errors, touched, handleChange, handleBlur, handleSubmit, loader, localError, signUp }) => {
+const RegForm = ({ values, errors, touched, handleChange, handleBlur, handleSubmit, loader, localError }) => {
   const [serverErrorsArr, setServerErrorsArr] = useState([]);
 
   useEffect(() => {
@@ -20,7 +20,7 @@ const RegForm = ({ values, errors, touched, handleChange, handleBlur, handleSubm
     }
   }, [localError]);
 
-  const isButtonDisabled = loader || !!(errors.email && touched.email) || !!(errors.password && touched.password);
+  const isButtonDisabled = !!(errors.email && touched.email) || !!(errors.password && touched.password);
 
   return (
     <form onSubmit={handleSubmit} className={css.form}>
@@ -66,21 +66,24 @@ const RegForm = ({ values, errors, touched, handleChange, handleBlur, handleSubm
         error={errors.username}
         touched={touched.username}
       />
+
+      {localError && (
+        <>
+          {serverErrorsArr.map((err) => (
+            <span className="error" key={err}>
+              {localError[err]}
+            </span>
+          ))}
+        </>
+      )}
+
       <div className={css.buttonContainer}>
-        <Button type="submit" shadow={false} isLoading={loader}>
+        <Button type="submit" shadow={false} isLoading={loader} disabled={isButtonDisabled}>
           Register
         </Button>
       </div>
 
       <Link to="/signin" name="Login" />
-
-      {localError && (
-        <>
-          {serverErrorsArr.map((err) => (
-            <span className="inputComment">{localError[err]}</span>
-          ))}
-        </>
-      )}
     </form>
   );
 };

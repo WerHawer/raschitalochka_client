@@ -9,7 +9,7 @@ import css from './login.module.css';
 import Link from 'components/Link/LinkCustom';
 
 const LoginForm = (props) => {
-  const { values, errors, touched, handleChange, handleBlur, handleSubmit, loader, localError, signIn } = props;
+  const { values, errors, touched, handleChange, handleBlur, handleSubmit, loader, localError } = props;
   const [serverErrorsArr, setServerErrorsArr] = useState([]);
 
   useEffect(() => {
@@ -20,7 +20,7 @@ const LoginForm = (props) => {
     }
   }, [localError]);
 
-  const isButtonDisabled = loader || !!(errors.email && touched.email) || !!(errors.password && touched.password);
+  const isButtonDisabled = !!(errors.email && touched.email) || !!(errors.password && touched.password);
 
   return (
     <form onSubmit={handleSubmit} className={css.form}>
@@ -50,22 +50,16 @@ const LoginForm = (props) => {
       {localError && (
         <>
           {serverErrorsArr.map((err) => (
-            <span className="error">{localError[err]}</span>
+            <span className="error" key={err}>
+              {localError[err]}
+            </span>
           ))}
         </>
       )}
 
-      <Button type="submit" shadow={false} isLoading={loader}>
+      <Button type="submit" shadow={false} isLoading={loader} disabled={isButtonDisabled}>
         Enter
       </Button>
-
-      {localError && (
-        <>
-          {serverErrorsArr.map((err) => (
-            <span className="inputComment">{localError[err]}</span>
-          ))}
-        </>
-      )}
 
       <Link to="/signup" name="Register" />
     </form>

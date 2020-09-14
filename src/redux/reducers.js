@@ -19,8 +19,43 @@ const localError = createReducer(null, {
   [actions.logout]: () => null,
 });
 
+const isAuth = createReducer(null, {
+  [actions.addUser]: () => true,
+  [actions.addTransaction]: () => true,
+
+  [actions.logout]: () => false,
+  [actions.isAuthFalse]: () => false,
+});
+
+const user = createReducer(null, {
+  [actions.addUser]: (state, { payload }) => payload,
+
+  [actions.removeUser]: () => null,
+  [actions.logout]: () => null,
+});
+
+const transactions = createReducer(null, {
+  [actions.addTransaction]: (state, { payload }) => payload,
+  [actions.logout]: () => null,
+});
+
+const transactionsSummary = createReducer(null, {
+  [actions.addTransactionsSummary]: (state, { payload }) => payload,
+  [actions.logout]: () => null,
+});
+
+const transactionsCategories = createReducer(null, {
+  [actions.transactionsCategories]: (state, { payload }) => payload,
+  [actions.logout]: () => null,
+});
+
 export default combineReducers({
   modal,
   loader,
   localError,
+  user,
+  isAuth,
+  transactions,
+  transactionsSummary,
+  transactionsCategories,
 });
