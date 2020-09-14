@@ -36,7 +36,9 @@ const OverviewPage = ({ addModal, modal }) => {
         <ActionInfo />
       </div>
       <div className={Styles.currencyWidget}>
-        <CurrencyStat />
+        <div className={Styles.currencyWidgetInnerWrapper}>
+          <CurrencyStat />
+        </div>
       </div>
     </div>
   );
