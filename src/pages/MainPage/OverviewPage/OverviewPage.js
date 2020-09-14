@@ -1,6 +1,5 @@
 import React from 'react';
 import Media from 'react-media';
-
 import Styles from './OverviewPage.module.css';
 import NavBar from 'components/NavBar/NavBar';
 import ActionInfo from 'components/ActionInfo/ActionInfo';
@@ -37,7 +36,9 @@ const OverviewPage = ({ addModal, modal }) => {
         <ActionInfo />
       </div>
       <div className={Styles.currencyWidget}>
-        <CurrencyStat />
+        <div className={Styles.currencyWidgetInnerWrapper}>
+          <CurrencyStat />
+        </div>
       </div>
     </div>
   );
