@@ -73,3 +73,11 @@ body {
   position: absolute;
   width: 100%;
 }
+
+.Income {
+  color: var(--good-font-color);
+}
+
+.Expense {
+  color: var(--alarm-color);
+}

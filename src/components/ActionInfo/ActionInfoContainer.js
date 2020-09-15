@@ -1,11 +1,10 @@
 import { connect } from 'react-redux';
 import ActionInfo from './ActionInfo';
-import { signIn } from 'redux/operations';
-import { getLoaderSelector, getLocalErrorSelector } from 'redux/selectors';
+import { getTransactionsSelector, getTransactionsCategoriesSelector } from 'redux/selectors';
 
 const mapStateToProps = (state) => ({
-  loader: getLoaderSelector(state),
-  localError: getLocalErrorSelector(state),
+  transactions: getTransactionsSelector(state),
+  categories: getTransactionsCategoriesSelector(state),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(ActionInfo);
+export default connect(mapStateToProps)(ActionInfo);

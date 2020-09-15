@@ -33,9 +33,14 @@ const Currency = {
   stats: () => requests.get(PRIVAT_API, { withCredentials: false }),
 };
 
+const User = {
+  user: () => requests.get('/user'),
+};
+
 export default {
   Currency,
   Auth,
   Categories,
   Transactions,
+  User,
 };

@@ -8,21 +8,6 @@ import DateInput from 'components/DateInput/DateInput';
 import Button from 'components/Button/Button';
 import css from './AddModals.module.css';
 
-const radioCategoriesCost = [
-  { id: 1, value: 'Main Expenses' },
-  { id: 2, value: 'Food' },
-  { id: 3, value: 'Car' },
-  { id: 4, value: 'Self Care' },
-  { id: 5, value: 'Child Care' },
-  { id: 6, value: 'Education' },
-  { id: 7, value: 'Entertainment' },
-];
-
-const radioCategoriesIncome = [
-  { id: 1, value: 'Regular Income' },
-  { id: 2, value: 'Irregular Income' },
-];
-
 const pad = (str) => str.padStart(2, '0');
 
 const dateToString = (date) => {
@@ -35,7 +20,21 @@ const dateToString = (date) => {
 
 // ==========================================>
 
-const AddCost = ({ values, handleChange, handleSubmit, setFieldValue, loader, errors, touched, variant }) => {
+const AddCost = ({
+  values,
+  handleChange,
+  handleSubmit,
+  setFieldValue,
+  loader,
+  errors,
+  touched,
+  variant,
+  transactionsCategories,
+}) => {
+  const radioCategoriesCost = transactionsCategories.filter((el) => el.type === 'Expense');
+
+  const radioCategoriesIncome = transactionsCategories.filter((el) => el.type === 'Income');
+
   const valueToFixed = (value) => {
     if (value) return Number(value).toFixed(2);
 
@@ -67,10 +66,10 @@ const AddCost = ({ values, handleChange, handleSubmit, setFieldValue, loader, er
               type="number"
               placeholder={inputPlaceholder}
               variant={inputVariant}
-              name="summ"
-              error={errors.summ}
-              value={values.summ}
-              touched={touched.summ}
+              name="amount"
+              error={errors.amount}
+              value={values.amount}
+              touched={touched.amount}
               onChange={handleChange}
               onBlur={customBlur}
             />
@@ -80,13 +79,10 @@ const AddCost = ({ values, handleChange, handleSubmit, setFieldValue, loader, er
             <h2 className={css.h2}>Categories</h2>
 
             <Radio
-              name="categories"
+              blockName="categoryId"
               elements={radioCategories}
-              onChange={(e) => {
-                handleChange(e);
-                console.log(values.categories);
-              }}
-              formikValue={values.categories}
+              onChange={handleChange}
+              formikValue={values.categoryId}
               variant={variant}
             />
           </div>
@@ -98,7 +94,7 @@ const AddCost = ({ values, handleChange, handleSubmit, setFieldValue, loader, er
         </div>
 
         <div className={css.button__container}>
-          <Button loading={loader} type="submit" disabled={!values.summ}>
+          <Button loading={loader} type="submit" disabled={!values.amount}>
             Add
           </Button>
         </div>
@@ -110,17 +106,27 @@ const AddCost = ({ values, handleChange, handleSubmit, setFieldValue, loader, er
 export default withFormik({
   mapPropsToValues: ({ variant }) => ({
     date: new Date(),
-    categories: variant === 'cost' ? 'Main Expenses' : 'Regular Income',
+    categoryId: variant === 'cost' ? 1 : 10,
   }),
 
   validationSchema: Yup.object().shape({
     date: Yup.string().required('Chose Date'),
-    summ: Yup.string().required('Type Amount'),
+    amount: Yup.string().required('Type Amount'),
   }),
 
   handleSubmit: (values, { props }) => {
-    console.log('values', values);
+    const { variant, addIncome, addExpense } = props;
+    const { categoryId, amount } = values;
 
+    const type = variant === 'cost' ? 'Expense' : 'Income';
     const dateStr = dateToString(values.date);
+
+    const id = String(categoryId);
+
+    const amountN = Number(amount);
+
+    const finalObj = { ...values, type, date: dateStr, categoryId: id, amount: amountN };
+
+    variant === 'cost' ? addExpense(finalObj) : addIncome(finalObj);
   },
 })(AddCost);

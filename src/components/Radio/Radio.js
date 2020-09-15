@@ -1,26 +1,24 @@
 import React from 'react';
 import css from './radio.module.css';
 
-const Radio = ({ elements, name, onChange, formikValue, variant }) => {
+const Radio = ({ elements, blockName, onChange, formikValue, variant }) => {
   return (
     <ul className={css.list}>
-      {elements.map(({ id, value }) => {
-        console.log(value === formikValue);
-
+      {elements.map(({ id, name }) => {
         return (
           <li key={id} className={css.li}>
             <input
               type="radio"
               id={id}
-              name={name}
-              value={value}
+              name={blockName}
+              value={id}
               className={`${css.input} ${css[variant]}`}
-              checked={value === formikValue}
+              checked={id == formikValue}
               onChange={onChange}
             />
 
             <label htmlFor={id} className={css.label}>
-              {value}
+              {name}
             </label>
           </li>
         );

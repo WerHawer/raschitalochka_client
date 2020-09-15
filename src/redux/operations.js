@@ -1,6 +1,13 @@
 import * as actions from 'redux/actions';
 import api from 'api/agent';
 
+export const getUser = () => async (dispatch) => {
+  try {
+    const response = await api.User.user();
+    dispatch(actions.addUser(response.user));
+  } catch (error) {}
+};
+
 export const signUp = (data) => async (dispatch) => {
   dispatch(actions.startLoader());
   dispatch(actions.removeLocalError());
@@ -76,9 +83,49 @@ export const getTransactionCategories = () => async (dispatch) => {
 
 export const logout = () => async (dispatch) => {
   try {
-    const response = await api.Auth.signOut();
+    await api.Auth.signOut();
     dispatch(actions.logout());
   } catch (error) {
     console.log('error', error);
+  }
+};
+
+export const addIncome = (data) => async (dispatch) => {
+  dispatch(actions.startLoader());
+
+  try {
+    await api.Transactions.createTransaction(data);
+
+    getUser()(dispatch);
+    dispatch(actions.removeModal());
+    getTransaction()(dispatch);
+  } catch (error) {
+    if (error.response.status === 401) {
+      dispatch(actions.isAuthFalse());
+    } else {
+      dispatch(actions.addLocalError(error.response.data));
+    }
+  } finally {
+    dispatch(actions.stopLoader());
+  }
+};
+
+export const addExpense = (data) => async (dispatch) => {
+  dispatch(actions.startLoader());
+
+  try {
+    const response = await api.Transactions.createTransaction(data);
+
+    getUser()(dispatch);
+    dispatch(actions.removeModal());
+    getTransaction()(dispatch);
+  } catch (error) {
+    if (error.response.status === 401) {
+      dispatch(actions.isAuthFalse());
+    } else {
+      dispatch(actions.addLocalError(error.response.data));
+    }
+  } finally {
+    dispatch(actions.stopLoader());
   }
 };

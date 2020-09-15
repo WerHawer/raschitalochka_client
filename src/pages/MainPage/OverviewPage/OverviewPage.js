@@ -1,7 +1,7 @@
 import React from 'react';
 import Styles from './OverviewPage.module.css';
 import NavBar from 'components/NavBar/NavBar';
-import ActionInfo from 'components/ActionInfo/ActionInfo';
+import ActionInfo from 'components/ActionInfo/ActionInfoContainer';
 import Button from 'components/Button/Button';
 import CurrencyStat from 'components/CurrencyStat/CurrencyStat';
 
