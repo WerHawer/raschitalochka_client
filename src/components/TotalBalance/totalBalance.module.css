@@ -1,0 +1,15 @@
+.balance {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.text_balance {
+  font-size: 15px;
+  color: #fff;
+}
+
+.sum_balance {
+  font-size: 15px;
+  color: #fff;
+}

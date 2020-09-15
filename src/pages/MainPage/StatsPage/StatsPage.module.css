@@ -58,9 +58,13 @@
   border-radius: 5px 5px 0 0;
 }
 
+/* total balance style */
 .balanceBar {
-  display: none;
-  background-color: #3a5374;
+  /* display: none; */
+  display: flex;
+  border-radius: 5px;
+  padding: 50px 25px 50px 25px;
+  background-color: #516d57;
 }
 
 @media screen and (min-width: 768px) {
