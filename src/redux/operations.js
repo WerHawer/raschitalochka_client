@@ -53,9 +53,16 @@ export const getTransaction = () => async (dispatch) => {
   }
 };
 
-export const getTransactionSummary = () => async (dispatch) => {
+export const getTransactionSummary = (year, month) => async (dispatch) => {
+  const date = new Date();
+  const Y = String(date.getFullYear());
+  const M = String(date.getMonth() + 1);
+
+  if (!year) year = Y;
+  if (!month) month = M;
+
   try {
-    const transactions = await api.Transactions.getTransactionSummary();
+    const transactions = await api.Transactions.getTransactionSummary(year, month);
 
     dispatch(actions.addTransactionsSummary(transactions));
   } catch (error) {

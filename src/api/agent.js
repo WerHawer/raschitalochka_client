@@ -26,7 +26,7 @@ const Categories = {
 const Transactions = {
   createTransaction: (trans) => requests.post('/transactions', trans),
   getTransaction: () => requests.get('/transactions'),
-  getTransactionSummary: (year = '', month = '') => requests.get(`/transactions/summary?${year}&${month}`),
+  getTransactionSummary: (year = '', month = '') => requests.get(`/transactions/summary?year=${year}&month=${month}`),
 };
 
 const Currency = {
