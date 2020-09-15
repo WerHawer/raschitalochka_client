@@ -6,6 +6,8 @@ import TransactionsSummary from 'components/TransactionsSummary/TransactionsSumm
 import CurrencyStat from 'components/CurrencyStat/CurrencyStat';
 import Styles from './StatsPage.module.css';
 
+import TotalBalance from '../../../components/TotalBalance/TotalBalance';
+
 const StatsPage = () => (
   <div className={Styles.pageWrapper}>
     <div className={Styles.navBar}>
@@ -28,6 +30,7 @@ const StatsPage = () => (
     </div>
 
     <div className={Styles.balanceBar}>
+      <TotalBalance />
       {/* Place for balance component */}
       {/* ////// */}
     </div>
