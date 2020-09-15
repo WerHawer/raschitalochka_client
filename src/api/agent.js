@@ -26,11 +26,15 @@ const Categories = {
 const Transactions = {
   createTransaction: (trans) => requests.post('/transactions', trans),
   getTransaction: () => requests.get('/transactions'),
-  getTransactionSummary: (year = '', month = '') => requests.get(`/transactions/summary?${year}&${month}`),
+  getTransactionSummary: (year = '', month = '') => requests.get(`/transactions/summary?year=${year}&month=${month}`),
 };
 
 const Currency = {
   stats: () => requests.get(PRIVAT_API, { withCredentials: false }),
+};
+
+const User = {
+  user: () => requests.get('/user'),
 };
 
 export default {
@@ -38,4 +42,5 @@ export default {
   Auth,
   Categories,
   Transactions,
+  User,
 };

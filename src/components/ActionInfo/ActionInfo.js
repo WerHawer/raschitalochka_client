@@ -2,46 +2,17 @@ import React from 'react';
 import InfoField from 'components/InfoField/InfoField';
 import css from './ActionInfo.module.css';
 
-const actions = [
-  {
-    id: '1',
-    date: '03-03-2020',
-    type: 'plus',
-    category: 'Irregular Income',
-    comments: 'Cash',
-    amount: '10000',
-    balance: '1232435343',
-  },
-  {
-    id: '2',
-    date: '03-04-2020',
-    type: 'plus',
-    category: 'Irregular Income',
-    comments: 'Cash',
-    amount: '10000',
-    balance: '1232435343',
-  },
-  {
-    id: '3',
-    date: '23-03-2020',
-    type: 'plus',
-    category: 'Irregular Income',
-    comments: 'Cash',
-    amount: '10000',
-    balance: '1232435343',
-  },
-  {
-    id: '4',
-    date: '12-04-2020',
-    type: 'plus',
-    category: 'Irregular Income',
-    comments: 'Card',
-    amount: '10000',
-    balance: '1232435343',
-  },
-];
+const pad = (str) => str.padStart(2, '0');
 
-const ActionInfo = () => {
+const dateToString = (date) => {
+  const day = pad(String(date.getDate()));
+  const month = pad(String(date.getMonth() + 1));
+  const year = date.getFullYear();
+
+  return `${year}-${month}-${day}`;
+};
+
+const ActionInfo = ({ transactions, categories }) => {
   return (
     <div className={css.mainWrapper}>
       <div className={css.header}>
@@ -52,20 +23,29 @@ const ActionInfo = () => {
         <p className={css.header__name}>amount</p>
         <p className={css.header__name}>balance after</p>
       </div>
-      {actions &&
-        actions.map(({ id, date, type, category, comments, amount, balance }) => (
-          <div key={id} className={css.wrapper}>
-            <div className={css.backLine}></div>
-            <div className={css.infoWrapper}>
-              <InfoField name="Date" value={date} />
-              <InfoField name="Type" value={type} />
-              <InfoField name="Category" value={category} />
-              <InfoField name="Comments" value={comments} />
-              <InfoField name="Amount" value={amount} />
-              <InfoField name="Balance After" value={balance} />
+      {categories && !!transactions.length ? (
+        transactions.map(({ id, date, type, categoryId, comment, amount, balanceAfter }) => {
+          const dateStr = dateToString(new Date(date));
+
+          const category = categories.find(({ id }) => id == categoryId);
+
+          return (
+            <div key={id} className={css.wrapper}>
+              <div className={css.backLine}></div>
+              <div className={css.infoWrapper}>
+                <InfoField name="Date" value={dateStr} />
+                <InfoField name="Type" value={type} type={type} />
+                <InfoField name="Category" value={category.name} type={type} />
+                <InfoField name="Comments" value={comment} type={type} />
+                <InfoField name="Amount" value={amount} type={type} />
+                <InfoField name="Balance After" value={balanceAfter} type={type} />
+              </div>
             </div>
-          </div>
-        ))}
+          );
+        })
+      ) : (
+        <p className={css.noTransactions}>No transactions</p>
+      )}
     </div>
   );
 };

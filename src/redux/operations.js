@@ -1,6 +1,13 @@
 import * as actions from 'redux/actions';
 import api from 'api/agent';
 
+export const getUser = () => async (dispatch) => {
+  try {
+    const response = await api.User.user();
+    dispatch(actions.addUser(response.user));
+  } catch (error) {}
+};
+
 export const signUp = (data) => async (dispatch) => {
   dispatch(actions.startLoader());
   dispatch(actions.removeLocalError());
@@ -8,7 +15,7 @@ export const signUp = (data) => async (dispatch) => {
   try {
     const response = await api.Auth.signUp(data);
 
-    dispatch(actions.addUser(response));
+    dispatch(actions.addUser(response.user));
   } catch (error) {
     dispatch(actions.addLocalError(error.response.data));
     console.log('error', error);
@@ -23,7 +30,7 @@ export const signIn = (data) => async (dispatch) => {
 
   try {
     const response = await api.Auth.signIn(data);
-    dispatch(actions.addUser(response));
+    dispatch(actions.addUser(response.user));
   } catch (error) {
     dispatch(actions.addLocalError(error.response.data));
     console.log('error', error);
@@ -46,9 +53,16 @@ export const getTransaction = () => async (dispatch) => {
   }
 };
 
-export const getTransactionSummary = () => async (dispatch) => {
+export const getTransactionSummary = (year, month) => async (dispatch) => {
+  const date = new Date();
+  const Y = String(date.getFullYear());
+  const M = String(date.getMonth() + 1);
+
+  if (!year) year = Y;
+  if (!month) month = M;
+
   try {
-    const transactions = await api.Transactions.getTransactionSummary();
+    const transactions = await api.Transactions.getTransactionSummary(year, month);
 
     dispatch(actions.addTransactionsSummary(transactions));
   } catch (error) {
@@ -76,9 +90,49 @@ export const getTransactionCategories = () => async (dispatch) => {
 
 export const logout = () => async (dispatch) => {
   try {
-    const response = await api.Auth.signOut();
+    await api.Auth.signOut();
     dispatch(actions.logout());
   } catch (error) {
     console.log('error', error);
+  }
+};
+
+export const addIncome = (data) => async (dispatch) => {
+  dispatch(actions.startLoader());
+
+  try {
+    await api.Transactions.createTransaction(data);
+
+    getUser()(dispatch);
+    dispatch(actions.removeModal());
+    getTransaction()(dispatch);
+  } catch (error) {
+    if (error.response.status === 401) {
+      dispatch(actions.isAuthFalse());
+    } else {
+      dispatch(actions.addLocalError(error.response.data));
+    }
+  } finally {
+    dispatch(actions.stopLoader());
+  }
+};
+
+export const addExpense = (data) => async (dispatch) => {
+  dispatch(actions.startLoader());
+
+  try {
+    const response = await api.Transactions.createTransaction(data);
+
+    getUser()(dispatch);
+    dispatch(actions.removeModal());
+    getTransaction()(dispatch);
+  } catch (error) {
+    if (error.response.status === 401) {
+      dispatch(actions.isAuthFalse());
+    } else {
+      dispatch(actions.addLocalError(error.response.data));
+    }
+  } finally {
+    dispatch(actions.stopLoader());
   }
 };

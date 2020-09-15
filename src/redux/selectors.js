@@ -15,3 +15,9 @@ export const getIncomeSummary = (state) =>
 
 export const getCostsSummary = (state) =>
   state.transactionsSummary.stats.reduce((acc, item) => (item.type === 'Expense' ? (acc += item.totalAmount) : acc), 0);
+
+export const getUserSelector = (state) => state.user;
+
+export const getTransactionsSelector = (state) => state.transactions;
+
+export const getTransactionsCategoriesSelector = (state) => state.transactionsCategories;

@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 
-import AddModals from 'components/AddModals/AddModals';
+import AddModals from 'components/AddModals/AddModalsContainer';
 import css from './modal.module.css';
 
 const Modal = ({ modal, removeModal }) => {

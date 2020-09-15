@@ -29,6 +29,11 @@
   background-color: var(--secondary-bg-color);
 }
 
+.noTransactions {
+  text-align: center;
+  margin-top: 30px;
+}
+
 /* MEDIA 768 */
 @media (min-width: 768px) {
   .mainWrapper > .wrapper:nth-child(odd) {
