@@ -1,10 +1,10 @@
 import React from 'react';
 import { withFormik } from 'formik';
 import * as Yup from 'yup';
-
+// components/Button/Button
 import Input from 'components/Input/Input';
 import Radio from 'components/Radio/Radio';
-import Button from 'components/Button/Button';
+import Button from '../Button/Button';
 import ModalsHeader from 'components/ModalsHeader/ModalsHeaderContainer';
 import DateInput from 'components/DateInput/DateInput';
 import css from './AddModals.module.css';
