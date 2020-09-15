@@ -17,6 +17,7 @@
 }
 .profileNameBlock {
   display: flex;
+  align-items: center;
   color: var(--main-green-font);
 }
 .profileName {

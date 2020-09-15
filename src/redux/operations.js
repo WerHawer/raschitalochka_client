@@ -8,7 +8,7 @@ export const signUp = (data) => async (dispatch) => {
   try {
     const response = await api.Auth.signUp(data);
 
-    dispatch(actions.addUser(response));
+    dispatch(actions.addUser(response.user));
   } catch (error) {
     dispatch(actions.addLocalError(error.response.data));
     console.log('error', error);
@@ -23,7 +23,7 @@ export const signIn = (data) => async (dispatch) => {
 
   try {
     const response = await api.Auth.signIn(data);
-    dispatch(actions.addUser(response));
+    dispatch(actions.addUser(response.user));
   } catch (error) {
     dispatch(actions.addLocalError(error.response.data));
     console.log('error', error);

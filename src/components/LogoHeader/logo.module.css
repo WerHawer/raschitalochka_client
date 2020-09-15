@@ -1,6 +1,8 @@
 .logo {
   display: flex;
   align-items: center;
+  text-decoration: none;
+  color: #2c353e;
 }
 .logoForm {
   display: flex;

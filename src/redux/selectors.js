@@ -5,3 +5,5 @@ export const getLoaderSelector = (state) => state.loader;
 export const getLocalErrorSelector = (state) => state.localError;
 
 export const getIsAuthSelector = (state) => state.isAuth;
+
+export const getUserSelector = (state) => state.user;
