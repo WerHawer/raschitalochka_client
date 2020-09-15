@@ -25,8 +25,7 @@ const NavBar = ({ balance }) => (
         </NavLinkCustom>
       </li>
       <li className={Styles.navBarListItemBalance}>
-        Total Balance:{' '}
-        <span className={Styles.navBarListItemBalanceData}>{balance ? balance.toFixed(2) : null} UAH</span>
+        Total Balance: <span className={Styles.navBarListItemBalanceData}>{balance.toFixed(2)} UAH</span>
       </li>
     </ul>
   </nav>

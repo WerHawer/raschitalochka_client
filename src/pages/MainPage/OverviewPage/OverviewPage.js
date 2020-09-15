@@ -1,9 +1,10 @@
 import React from 'react';
 import Styles from './OverviewPage.module.css';
-import NavBar from 'components/NavBar/NavBar';
+import NavBar from 'components/NavBar/NavBarContainer';
 import ActionInfo from 'components/ActionInfo/ActionInfo';
 import Button from 'components/Button/Button';
 import CurrencyStat from 'components/CurrencyStat/CurrencyStat';
+import TotalBalance from 'components/TotalBalance/TotalBalanceContainer';
 
 const OverviewPage = ({ addModal, modal }) => {
   const handleAddClick = (word) => {
@@ -12,12 +13,10 @@ const OverviewPage = ({ addModal, modal }) => {
   return (
     <div className={Styles.pageWrapper}>
       <div className={Styles.navBar}>
-        <NavBar balance={24000} />
+        <NavBar />
       </div>
-
       <div className={Styles.balanceBar}>
-        {/* Place for balance component */}
-        {/* ////// */}
+        <TotalBalance />
       </div>
       <div className={Styles.transactionsList}>
         <div className={Styles.addTransaction}>

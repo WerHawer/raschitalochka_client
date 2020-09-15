@@ -41,7 +41,7 @@
   }
 
   .navBarList {
-    width: 460px;
+    width: 415px;
   }
 
   .navBarListItem:not(:last-child):after {

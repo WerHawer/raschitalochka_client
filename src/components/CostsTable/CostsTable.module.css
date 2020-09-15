@@ -29,12 +29,29 @@
 
 .tableItem {
   display: flex;
-  justify-content: space-between;
+  align-items: center;
   padding: 12px 24px;
   border-bottom: 1px solid var(--secondary-bg-color);
   font-weight: 500;
   font-size: 13px;
   color: var(--primary-font-color);
+}
+
+.icon {
+  width: 17px;
+  height: 17px;
+  margin-right: 13px;
+}
+
+.name {
+  margin-right: auto;
+}
+
+.noTransactions {
+  text-align: center;
+  margin: 10px 0;
+  padding: 0;
+  text-transform: uppercase;
 }
 
 @media (min-width: 768px) {

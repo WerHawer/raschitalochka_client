@@ -1,15 +1,32 @@
 .balance {
   display: flex;
-  justify-content: space-between;
-  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  font-weight: 500;
 }
 
 .text_balance {
   font-size: 15px;
   color: #fff;
+  margin-bottom: 7px;
 }
 
 .sum_balance {
   font-size: 15px;
   color: #fff;
+}
+
+@media (min-width: 1024px) {
+  .balance {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 28px;
+  }
+
+  .text_balance {
+    margin-bottom: 0;
+  }
 }

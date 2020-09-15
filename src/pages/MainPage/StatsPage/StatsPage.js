@@ -1,19 +1,17 @@
 import React from 'react';
-import NavBar from 'components/NavBar/NavBar';
-import Diagram from 'components/Diagram/Diagram';
-import CostsTable from 'components/CostsTable/CostsTable';
-import TransactionsSummary from 'components/TransactionsSummary/TransactionsSummary';
+import NavBar from 'components/NavBar/NavBarContainer';
+import Diagram from 'components/Diagram/DiagramContainer';
+import CostsTable from 'components/CostsTable/CostsTableContainer';
+import TransactionsSummary from 'components/TransactionsSummary/TransactionsSummaryContainer';
 import CurrencyStat from 'components/CurrencyStat/CurrencyStat';
 import Styles from './StatsPage.module.css';
-
-import TotalBalance from '../../../components/TotalBalance/TotalBalance';
+import TotalBalance from 'components/TotalBalance/TotalBalanceContainer';
 
 const StatsPage = () => (
   <div className={Styles.pageWrapper}>
     <div className={Styles.navBar}>
-      <NavBar balance={24000} />
+      <NavBar />
     </div>
-
     <div className={Styles.diagrammAndTransactionsTable}>
       <div className={Styles.titleBlock}>Cost Diagram</div>
       <div className={Styles.diagramBlock}>
@@ -28,13 +26,9 @@ const StatsPage = () => (
         </div>
       </div>
     </div>
-
     <div className={Styles.balanceBar}>
       <TotalBalance />
-      {/* Place for balance component */}
-      {/* ////// */}
     </div>
-
     <div className={Styles.currencyWidget}>
       <CurrencyStat />
     </div>
