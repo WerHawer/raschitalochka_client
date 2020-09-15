@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import css from './button.module.css';
+import { ReactComponent as Exid } from '../../public/icons/exit.svg';
 import Spinner from './button-loader/button-spinner';
+import Media from 'react-media';
 
 const Button = ({ variant = 'standart', children, type, name, value, onClick, disabled, isLoading, shadow = true }) => {
   const wrapperClasses = shadow ? `${css.wrapper}` : ` ${css.wrapper__noShadow} ${css.wrapper}`;
@@ -22,13 +24,27 @@ const Button = ({ variant = 'standart', children, type, name, value, onClick, di
           </button>
         </div>
       )}
-
       {variant === 'logout' && (
-        <div>
-          <button className={css.button_logout} type={type} name={name} value={value} onClick={onClick}>
-            logout
-          </button>
-        </div>
+        <>
+          <div>
+            <Media
+              queries={{
+                small: '(max-width: 767px)',
+              }}
+            >
+              {(matches) => (
+                <Fragment>
+                  <button className={css.button_logout_item} type={type} name={name} value={value} onClick={onClick}>
+                    <span className={css.button_svg}>
+                      <Exid />
+                    </span>
+                    {matches.small ? '' : 'Logout'}
+                  </button>
+                </Fragment>
+              )}
+            </Media>
+          </div>
+        </>
       )}
     </>
   );
