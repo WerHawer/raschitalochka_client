@@ -60,10 +60,8 @@
 
 /* total balance style */
 .balanceBar {
-  /* display: none; */
-  display: flex;
+  display: none;
   border-radius: 5px;
-  padding: 50px 25px 50px 25px;
   background-color: #516d57;
 }
 

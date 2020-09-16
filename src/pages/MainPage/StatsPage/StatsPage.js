@@ -1,44 +1,43 @@
-import React from 'react';
-import NavBar from 'components/NavBar/NavBar';
-import Diagram from 'components/Diagram/Diagram';
-import CostsTable from 'components/CostsTable/CostsTable';
-import TransactionsSummary from 'components/TransactionsSummary/TransactionsSummary';
+import React, { useEffect } from 'react';
+import NavBar from 'components/NavBar/NavBarContainer';
+import Diagram from 'components/Diagram/DiagramContainer';
+import CostsTable from 'components/CostsTable/CostsTableContainer';
+import TransactionsSummary from 'components/TransactionsSummary/TransactionsSummaryContainer';
 import CurrencyStat from 'components/CurrencyStat/CurrencyStat';
 import Styles from './StatsPage.module.css';
+import TotalBalance from 'components/TotalBalance/TotalBalanceContainer';
 
-import TotalBalance from '../../../components/TotalBalance/TotalBalance';
+const StatsPage = ({ getTransactionSummary }) => {
+  useEffect(() => {
+    getTransactionSummary();
+  });
 
-const StatsPage = () => (
-  <div className={Styles.pageWrapper}>
-    <div className={Styles.navBar}>
-      <NavBar balance={24000} />
-    </div>
-
-    <div className={Styles.diagrammAndTransactionsTable}>
-      <div className={Styles.titleBlock}>Cost Diagram</div>
-      <div className={Styles.diagramBlock}>
-        <div className={Styles.diagramm}>
-          <Diagram />
+  return (
+    <div className={Styles.pageWrapper}>
+      <div className={Styles.navBar}>
+        <NavBar />
+      </div>
+      <div className={Styles.diagrammAndTransactionsTable}>
+        <div className={Styles.titleBlock}>Cost Diagram</div>
+        <div className={Styles.diagramBlock}>
+          <div className={Styles.diagramm}>
+            <Diagram />
+          </div>
+        </div>
+        <div className={Styles.transactionsTable}>
+          <CostsTable />
+          <div className={Styles.transactionsSummary}>
+            <TransactionsSummary />
+          </div>
         </div>
       </div>
-      <div className={Styles.transactionsTable}>
-        <CostsTable />
-        <div className={Styles.transactionsSummary}>
-          <TransactionsSummary />
-        </div>
+      <div className={Styles.balanceBar}>
+        <TotalBalance />
+      </div>
+      <div className={Styles.currencyWidget}>
+        <CurrencyStat />
       </div>
     </div>
-
-    <div className={Styles.balanceBar}>
-      <TotalBalance />
-      {/* Place for balance component */}
-      {/* ////// */}
-    </div>
-
-    <div className={Styles.currencyWidget}>
-      <CurrencyStat />
-    </div>
-  </div>
-);
-
+  );
+};
 export default StatsPage;

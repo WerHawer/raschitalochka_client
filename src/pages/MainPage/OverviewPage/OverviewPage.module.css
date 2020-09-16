@@ -19,7 +19,7 @@
 .balanceBar {
   height: 16.2vh;
   margin-bottom: 3.52vh;
-  background-color: #3a5374;
+  background-color: var(--green-bg-color);
   border-radius: 5px;
 }
 
@@ -30,7 +30,6 @@
 
 .transactionsListItem {
   height: 47.5vh;
-  background-color: #3a5374;
   margin-bottom: 2.8vh;
 }
 
@@ -136,6 +135,7 @@
 
   .balanceBar {
     display: block;
+    min-width: auto;
     width: 100%;
     height: auto;
     margin: 0;
