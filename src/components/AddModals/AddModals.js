@@ -111,7 +111,7 @@ export default withFormik({
 
   validationSchema: Yup.object().shape({
     date: Yup.string().required('Chose Date'),
-    amount: Yup.string().required('Type Amount'),
+    amount: Yup.number().required('Type Amount').positive('please type positive amount'),
   }),
 
   handleSubmit: (values, { props }) => {

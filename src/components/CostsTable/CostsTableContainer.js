@@ -1,10 +1,15 @@
 import { connect } from 'react-redux';
 import CostsTable from './CostsTable';
-import { getTransactionsSummary, getTransactionsCategoriesSelector } from 'redux/selectors';
+import { getTransactionsSummarySelector, getTransactionsCategoriesSelector } from 'redux/selectors';
+import { getTransactionSummary } from 'redux/operations';
 
-const MSTP = (state) => ({
-  transactionsSummary: getTransactionsSummary(state),
+const mapStateToProps = (state) => ({
+  transactionsSummary: getTransactionsSummarySelector(state),
   transactionsCategories: getTransactionsCategoriesSelector(state),
 });
 
-export default connect(MSTP)(CostsTable);
+const mapDispatchToProps = {
+  getTransactionSummary,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(CostsTable);

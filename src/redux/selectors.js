@@ -8,7 +8,7 @@ export const getIsAuthSelector = (state) => state.isAuth;
 
 export const getUserBalance = (state) => state.user.balance;
 
-export const getTransactionsSummary = (state) => state.transactionsSummary.stats;
+export const getTransactionsSummarySelector = (state) => state.transactionsSummary.stats;
 
 export const getIncomeSummary = (state) =>
   state.transactionsSummary.stats.reduce((acc, item) => (item.type === 'Income' ? (acc += item.totalAmount) : acc), 0);

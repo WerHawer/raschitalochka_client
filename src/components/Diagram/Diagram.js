@@ -16,36 +16,44 @@ const Diagram = ({ data, transactionsCategories }) => {
     const y = cy + radius * Math.sin(-midAngle * RADIAN);
 
     return (
-      <text className={Style.label} fill="white" dominantBaseline="central" x={x} y={y} textAnchor={'middle'}>
-        {`${transactionsCategories.find((item) => item.id === Number(data[index].categoryId)).name}`}
-      </text>
+      <>
+        {transactionsCategories && data && (
+          <text className={Style.label} fill="white" dominantBaseline="central" x={x} y={y} textAnchor={'middle'}>
+            {`${
+              transactionsCategories.find((item) => item.id === Number(data[index]?.categoryId))?.name || 'no data'
+            } `}
+          </text>
+        )}
+      </>
     );
   };
 
   return (
     <>
-      <ResponsiveContainer className={Style.diagramContainer} height={'80%'}>
-        <PieChart>
-          <Pie
-            dataKey="totalAmount"
-            animationBegin={200}
-            animationDuration={1000}
-            data={data.length > 0 ? data : exampleData}
-            cx={'50%'}
-            cy={'50%'}
-            labelLine={false}
-            label={renderCustomizedLabel}
-            outerRadius={'100%'}
-            fill="#8884d8"
-            startAngle={-49}
-            endAngle={311}
-          >
-            {data.map((entry, index) => (
-              <Cell key={entry.categoryId} fill={colors[index]} />
-            ))}
-          </Pie>
-        </PieChart>
-      </ResponsiveContainer>
+      {data && (
+        <ResponsiveContainer className={Style.diagramContainer} height={'80%'}>
+          <PieChart>
+            <Pie
+              dataKey="totalAmount"
+              animationBegin={200}
+              animationDuration={1000}
+              data={!!data?.length ? data : exampleData}
+              cx={'50%'}
+              cy={'50%'}
+              labelLine={false}
+              label={renderCustomizedLabel}
+              outerRadius={'100%'}
+              fill="#8884d8"
+              startAngle={-49}
+              endAngle={311}
+            >
+              {data.map((entry, index) => (
+                <Cell key={entry.categoryId} fill={colors[index]} />
+              ))}
+            </Pie>
+          </PieChart>
+        </ResponsiveContainer>
+      )}
 
       <div className={Style.updateButton}>
         <Button>Update Diagram</Button>

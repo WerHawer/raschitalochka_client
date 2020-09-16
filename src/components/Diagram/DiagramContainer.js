@@ -1,9 +1,9 @@
 import { connect } from 'react-redux';
 import Diagram from './Diagram';
-import { getTransactionsSummary, getTransactionsCategoriesSelector } from 'redux/selectors';
+import { getTransactionsSummarySelector, getTransactionsCategoriesSelector } from 'redux/selectors';
 
 const MSTP = (state) => ({
-  data: getTransactionsSummary(state),
+  data: getTransactionsSummarySelector(state),
   transactionsCategories: getTransactionsCategoriesSelector(state),
 });
 

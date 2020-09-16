@@ -1,9 +1,12 @@
 import { connect } from 'react-redux';
 import StatsPage from './StatsPage';
-import { getTransactionSummary } from 'redux/operations';
+import { getTransactionsSummarySelector, getTransactionsCategoriesSelector } from 'redux/selectors';
 
-const MDTP = {
-  getTransactionSummary,
-};
+const mapStateToProps = (state) => ({
+  summary: getTransactionsSummarySelector(state),
+  categories: getTransactionsCategoriesSelector(state),
+});
 
-export default connect(null, MDTP)(StatsPage);
+const mapDispatchToProps = {};
+
+export default connect(mapStateToProps, mapDispatchToProps)(StatsPage);
