@@ -4,7 +4,7 @@ import Select from 'components/Select/Select';
 import colors from 'libs/colors';
 import Styles from './CostsTable.module.css';
 
-const CostsTable = ({ transactionsSummary }) => (
+const CostsTable = ({ transactionsSummary, transactionsCategories }) => (
   <>
     <div className={Styles.select}>
       <Select name={'Month'} />
@@ -20,8 +20,10 @@ const CostsTable = ({ transactionsSummary }) => (
           transactionsSummary.map((i, idx) => (
             <div className={Styles.tableItem} key={i.id}>
               <div className={Styles.icon} style={{ backgroundColor: colors[idx] }}></div>
-              <span className={Styles.name}>{i.name}</span>
-              <span>{i.value.toFixed(2)}</span>
+              <span className={Styles.name}>
+                {transactionsCategories.find((j) => j.id === Number(i.categoryId)).name}
+              </span>
+              <span>{i.totalAmount.toFixed(2)}</span>
             </div>
           ))
         ) : (

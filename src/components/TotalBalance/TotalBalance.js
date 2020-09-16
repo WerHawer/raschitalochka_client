@@ -1,11 +1,12 @@
 import React from 'react';
 import css from './totalBalance.module.css';
 
-const TotalBalance = ({ total = 0 }) => {
+const TotalBalance = ({ total }) => {
+  console.log(total);
   return (
     <>
       <div className={css.balance}>
-        <p className={css.text_balance}> Total Balance, UAH </p>
+        <p className={css.text_balance}>Total Balance, UAH </p>
         <span className={css.sum_balance}>{total.toFixed(2)}</span>
       </div>
     </>

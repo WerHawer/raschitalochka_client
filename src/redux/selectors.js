@@ -6,7 +6,7 @@ export const getLocalErrorSelector = (state) => state.localError;
 
 export const getIsAuthSelector = (state) => state.isAuth;
 
-export const getUserBalance = (state) => state.user.user.balance;
+export const getUserBalance = (state) => state.user.balance;
 
 export const getTransactionsSummary = (state) => state.transactionsSummary.stats;
 

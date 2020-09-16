@@ -5,7 +5,7 @@ import { AnimatedSwitch } from 'react-router-transition';
 import { mapStyles, bounceTransition } from 'libs/routesAnimationsSettings';
 import Header from '../../components/Header/HeaderContainer';
 import OverviewPage from './OverviewPage/OverviewPageContainer';
-import StatsPage from './StatsPage/StatsPage';
+import StatsPage from './StatsPage/StatsPageContainer';
 import CurrencyPage from './CurrencyPage/CurrencyPage';
 import PrivatRoute from 'components/PrivatRoute/PrivatRoute';
 
