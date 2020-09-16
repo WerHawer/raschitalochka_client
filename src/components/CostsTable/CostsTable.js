@@ -2,13 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Select from 'components/Select/Select';
 import colors from 'libs/colors';
+import { months, years } from 'libs/optionsForSelect';
 import Styles from './CostsTable.module.css';
 
 const CostsTable = ({ transactionsSummary, transactionsCategories }) => (
   <>
     <div className={Styles.select}>
-      <Select name={'Month'} />
-      <Select name={'Year'} />
+      <Select name={'Month'} options={months} />
+      <Select name={'Year'} options={years} />
     </div>
     <div className={Styles.table}>
       <div className={Styles.tableHeader}>

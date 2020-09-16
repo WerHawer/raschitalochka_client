@@ -15,13 +15,6 @@ const Diagram = ({ data, transactionsCategories }) => {
     const x = cx + radius * Math.cos(-midAngle * RADIAN);
     const y = cy + radius * Math.sin(-midAngle * RADIAN);
 
-    console.log('data', data);
-    console.log('transactionsCategories', transactionsCategories);
-    console.log(
-      'label',
-      transactionsCategories.find((item) => item.id === Number(data[index].categoryId))
-    );
-
     return (
       <text className={Style.label} fill="white" dominantBaseline="central" x={x} y={y} textAnchor={'middle'}>
         {`${transactionsCategories.find((item) => item.id === Number(data[index].categoryId)).name}`}
